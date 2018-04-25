@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rGM-1e-DPv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="KyB-ZZ-z9U">
+            <objects>
+                <viewController id="rGM-1e-DPv" customClass="ViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jPw-YV-NhC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="z4C-F1-uGV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lampIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-fx-DYs">
+                                <rect key="frame" x="0.0" y="124" width="375" height="323"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNw-QX-6vA">
+                                <rect key="frame" x="101" y="542" width="195" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="entrar com facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thl-jp-dc1">
+                                <rect key="frame" x="48" y="476" width="81" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="registrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-cI-eEy">
+                                <rect key="frame" x="261" y="479" width="58" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="entrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PNw-QX-6vA" firstAttribute="leading" secondItem="CNr-iN-HNU" secondAttribute="leading" constant="101" id="04f-Jb-ubU"/>
+                            <constraint firstItem="PNw-QX-6vA" firstAttribute="top" secondItem="IBV-cI-eEy" secondAttribute="bottom" constant="27" id="2nW-8r-AAF"/>
+                            <constraint firstItem="RhI-fx-DYs" firstAttribute="trailing" secondItem="z4C-F1-uGV" secondAttribute="trailing" id="4GZ-tA-z8l"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="bottom" secondItem="RhI-fx-DYs" secondAttribute="bottom" constant="220" id="9oC-oi-s2j"/>
+                            <constraint firstItem="thl-jp-dc1" firstAttribute="top" secondItem="RhI-fx-DYs" secondAttribute="bottom" constant="29" id="B98-EY-5ud"/>
+                            <constraint firstItem="IBV-cI-eEy" firstAttribute="top" secondItem="RhI-fx-DYs" secondAttribute="bottom" constant="32" id="FXi-jA-60d"/>
+                            <constraint firstItem="RhI-fx-DYs" firstAttribute="leading" secondItem="z4C-F1-uGV" secondAttribute="leading" id="HYB-Fh-paC"/>
+                            <constraint firstItem="z4C-F1-uGV" firstAttribute="top" secondItem="CNr-iN-HNU" secondAttribute="top" id="LZb-nz-VOO"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="bottom" secondItem="z4C-F1-uGV" secondAttribute="bottom" id="P0y-9E-xZD"/>
+                            <constraint firstItem="IBV-cI-eEy" firstAttribute="leading" secondItem="thl-jp-dc1" secondAttribute="trailing" constant="132" id="Q03-j4-yIl"/>
+                            <constraint firstItem="RhI-fx-DYs" firstAttribute="top" secondItem="CNr-iN-HNU" secondAttribute="top" constant="104" id="Q0g-Gp-r9N"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="trailing" secondItem="thl-jp-dc1" secondAttribute="trailing" constant="246" id="QH1-K8-yfa"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="trailing" secondItem="IBV-cI-eEy" secondAttribute="trailing" constant="56" id="a4S-AF-BnG"/>
+                            <constraint firstItem="z4C-F1-uGV" firstAttribute="leading" secondItem="CNr-iN-HNU" secondAttribute="leading" id="bu4-yh-iHt"/>
+                            <constraint firstItem="thl-jp-dc1" firstAttribute="leading" secondItem="CNr-iN-HNU" secondAttribute="leading" constant="48" id="dbE-83-8ce"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="trailing" secondItem="PNw-QX-6vA" secondAttribute="trailing" constant="79" id="iWE-HK-1bH"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="bottom" secondItem="PNw-QX-6vA" secondAttribute="bottom" constant="89" id="mKA-Xg-2xO"/>
+                            <constraint firstItem="PNw-QX-6vA" firstAttribute="top" secondItem="thl-jp-dc1" secondAttribute="bottom" constant="30" id="mfH-lM-ZlP"/>
+                            <constraint firstItem="CNr-iN-HNU" firstAttribute="trailing" secondItem="z4C-F1-uGV" secondAttribute="trailing" id="q90-1p-eGD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CNr-iN-HNU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKq-IF-LAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1143.2" y="-502.39880059970017"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bgDefault" width="54" height="102"/>
+        <image name="lampIcon" width="170" height="170"/>
+    </resources>
+</document>
