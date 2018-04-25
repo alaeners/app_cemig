@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="z4C-F1-uGV">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lampIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-fx-DYs">
                                 <rect key="frame" x="0.0" y="124" width="375" height="323"/>
@@ -30,6 +30,9 @@
                                 <state key="normal" title="entrar com facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginFBButton:" destination="rGM-1e-DPv" eventType="touchUpInside" id="NvA-nJ-xS4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thl-jp-dc1">
                                 <rect key="frame" x="48" y="476" width="81" height="36"/>
@@ -37,6 +40,9 @@
                                 <state key="normal" title="registrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="d20-fw-u1p" kind="show" id="ve3-oK-2I8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-cI-eEy">
                                 <rect key="frame" x="261" y="479" width="58" height="36"/>
@@ -44,6 +50,9 @@
                                 <state key="normal" title="entrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="q6y-Su-EMN" kind="show" id="S4a-Qf-Dn7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,7 +64,7 @@
                             <constraint firstItem="thl-jp-dc1" firstAttribute="top" secondItem="RhI-fx-DYs" secondAttribute="bottom" constant="29" id="B98-EY-5ud"/>
                             <constraint firstItem="IBV-cI-eEy" firstAttribute="top" secondItem="RhI-fx-DYs" secondAttribute="bottom" constant="32" id="FXi-jA-60d"/>
                             <constraint firstItem="RhI-fx-DYs" firstAttribute="leading" secondItem="z4C-F1-uGV" secondAttribute="leading" id="HYB-Fh-paC"/>
-                            <constraint firstItem="z4C-F1-uGV" firstAttribute="top" secondItem="CNr-iN-HNU" secondAttribute="top" id="LZb-nz-VOO"/>
+                            <constraint firstItem="z4C-F1-uGV" firstAttribute="top" secondItem="jPw-YV-NhC" secondAttribute="top" id="LZb-nz-VOO"/>
                             <constraint firstItem="CNr-iN-HNU" firstAttribute="bottom" secondItem="z4C-F1-uGV" secondAttribute="bottom" id="P0y-9E-xZD"/>
                             <constraint firstItem="IBV-cI-eEy" firstAttribute="leading" secondItem="thl-jp-dc1" secondAttribute="trailing" constant="132" id="Q03-j4-yIl"/>
                             <constraint firstItem="RhI-fx-DYs" firstAttribute="top" secondItem="CNr-iN-HNU" secondAttribute="top" constant="104" id="Q0g-Gp-r9N"/>
@@ -74,6 +83,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKq-IF-LAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1143.2" y="-502.39880059970017"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="7Wm-nb-aIr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" id="d20-fw-u1p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="COh-FT-5e0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="-790"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="3lP-O8-IF1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="q6y-Su-EMN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZsJ-FH-cgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434" y="-247"/>
         </scene>
     </scenes>
     <resources>

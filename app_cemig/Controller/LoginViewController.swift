@@ -32,18 +32,12 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
      // MARK: - Buttons
-    @IBAction func loginFBButton(_ sender: UIButton) {
-        loginButtonClicked()
-    }
     
     @IBAction func loginButton(_ sender: UIButton) {
         if emailTextField.isEqual(emailTeste) && passwordTextField.isEqual(senhaTeste){
             //let hvc = HomeViewController.self
             //Login com sucesso e chama a Home
             let _:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as UIViewController
-            
-            
-
             
             self.performSegue(withIdentifier: "LoginHomeSegue", sender: self)
             
@@ -61,25 +55,12 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func cancelButton(sender: UIButton) {
-        emailTextField.clearButtonMode = .always
-        passwordTextField.clearButtonMode = .always
+    @IBAction func cancelButton(sender: UIButton) {        
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
    
-    func loginButtonClicked() {
-        let loginManager = LoginManager()
-        
-        loginManager.logIn(readPermissions: [ .publicProfile, .email], viewController: self) { LoginResult in
-            switch LoginResult {
-            case .failed(let error):
-                print(error)
-            case .cancelled:
-                print("Login Cancelado pelo usuário -- se cancelado volta para a tela principal do app")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                print("Login Efetuado com Sucesso--- na verdade aqui abre se a home ou a tela de cadastro para atualizar informações, ou seja eu farei essa validação aqui" )
-            }
-        }
-    }
+
     
 
     /*

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-ji-snc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNj-MI-HKj">
                                 <rect key="frame" x="135" y="281" width="42" height="21"/>
@@ -32,7 +32,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" id="H8O-Q6-1p7"/>
-                            <constraint firstItem="NMa-ji-snc" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" id="MBD-rA-GKX"/>
+                            <constraint firstItem="NMa-ji-snc" firstAttribute="top" secondItem="fML-QX-kpt" secondAttribute="top" id="MBD-rA-GKX"/>
                             <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="NMa-ji-snc" secondAttribute="trailing" id="ZSu-Kw-ugd"/>
                             <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="NMa-ji-snc" secondAttribute="bottom" id="zST-Rp-WPo"/>
                         </constraints>
