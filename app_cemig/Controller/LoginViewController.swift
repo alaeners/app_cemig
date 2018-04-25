@@ -34,7 +34,10 @@ class LoginViewController: UIViewController {
      // MARK: - Buttons
     
     @IBAction func loginButton(_ sender: UIButton) {
-        if emailTextField.isEqual(emailTeste) && passwordTextField.isEqual(senhaTeste){
+        emailTeste.append(emailTextField.text!)
+        senhaTeste.append(passwordTextField.text!)
+        
+        if emailTeste.isEqual("email@email.com") && senhaTeste.isEqual("senha123"){
             //let hvc = HomeViewController.self
             //Login com sucesso e chama a Home
             let _:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as UIViewController
@@ -43,7 +46,7 @@ class LoginViewController: UIViewController {
             
         } else {
             
-            // Opa algo ta errado isso aí! Verifica email ou senha
+            // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
             let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                 //Do some thing here
