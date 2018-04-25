@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         } else {
             
             // Opa algo ta errado isso aí! Verifica email ou senha
-            let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .actionSheet)
+            let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                 //Do some thing here
                 view.dismiss(animated: true) {() -> Void in }
