@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+
+class RequestAPIs{
+    
+    
+ 
+}
+
+
 class ValidateEmail:UITextField{
     
     func validateEmail(Input:String) -> Bool {

@@ -6,8 +6,8 @@ target 'app_cemig' do
   use_frameworks!
   pod 'FacebookCore' 
   pod 'FacebookLogin'
-  pod 'Alamofire'
-
+  pod 'Alamofire'  
+  pod 'SwiftMaskText'
   # Pods for app_cemig
 
   target 'app_cemigTests' do

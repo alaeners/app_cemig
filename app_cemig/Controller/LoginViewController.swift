@@ -8,12 +8,9 @@
 
 import UIKit
 import Foundation
-import FacebookCore
-import FacebookLogin
-
 
 class LoginViewController: UIViewController {
-
+    
     var emailTeste = "email@email.com"
     var senhaTeste = "senha123"
     
@@ -31,11 +28,11 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-     // MARK: - Buttons
+    // MARK: - Buttons
     
     @IBAction func loginButton(_ sender: UIButton) {
-        emailTeste.append(emailTextField.text!)
-        senhaTeste.append(passwordTextField.text!)
+    emailTeste.append(emailTextField.text!)
+       senhaTeste.append(passwordTextField.text!)
         
         if emailTeste.isEqual("email@email.com") && senhaTeste.isEqual("senha123"){
             //let hvc = HomeViewController.self
@@ -54,7 +51,7 @@ class LoginViewController: UIViewController {
             })
             view.addAction(ok)
             present(view, animated: true) {() -> Void in }
-
+            
         }
     }
     
@@ -62,18 +59,18 @@ class LoginViewController: UIViewController {
         emailTextField.text = ""
         passwordTextField.text = ""
     }
-   
-
     
-
+    
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

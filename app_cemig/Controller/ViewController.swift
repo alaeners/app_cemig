@@ -12,7 +12,7 @@ import FacebookCore
 import FacebookLogin
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,11 +27,11 @@ class ViewController: UIViewController {
     }
     
     // MARK: Buttons
-//    @IBAction func logonButton(_ sender: UIButton) {
-//        let _:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginStoryboardSegueController") as UIViewController
-//
-//        self.performSegue(withIdentifier: "LoginStoryboardSegueController", sender: self)
-//    }
+    //    @IBAction func logonButton(_ sender: UIButton) {
+    //        let _:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginStoryboardSegueController") as UIViewController
+    //
+    //        self.performSegue(withIdentifier: "LoginStoryboardSegueController", sender: self)
+    //    }
     
     @IBAction func loginFBButton(_ sender: UIButton) {
         loginButtonClicked()
