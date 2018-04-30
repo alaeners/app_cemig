@@ -11,9 +11,6 @@ import Foundation
 
 class LoginViewController: UIViewController {
     
-    var emailTeste = "email@email.com"
-    var senhaTeste = "senha123"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,10 +28,8 @@ class LoginViewController: UIViewController {
     // MARK: - Buttons
     
     @IBAction func loginButton(_ sender: UIButton) {
-    emailTeste.append(emailTextField.text!)
-       senhaTeste.append(passwordTextField.text!)
-        
-        if emailTeste.isEqual("email@email.com") && senhaTeste.isEqual("senha123"){
+       
+        if emailTextField.text!.isEqual("email@email.com") && passwordTextField.text!.isEqual("senha123"){
             //let hvc = HomeViewController.self
             //Login com sucesso e chama a Home
             let _:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as UIViewController

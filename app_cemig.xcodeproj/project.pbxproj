@@ -13,6 +13,8 @@
 		BB0BB2DD208E460200936A8A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DC208E460200936A8A /* Login.storyboard */; };
 		BB0BB2DF208E461700936A8A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DE208E461700936A8A /* Home.storyboard */; };
 		BB0BB2E1208E462700936A8A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2E0208E462700936A8A /* Register.storyboard */; };
+		BB1621EF2097B51500A3211E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1621EE2097B51500A3211E /* Alamofire.framework */; };
+		BB1621F12097B51500A3211E /* JMMaskTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1621F02097B51500A3211E /* JMMaskTextField.framework */; };
 		BB17C1FF208A3C0200CC92B9 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C1FE208A3C0200CC92B9 /* LauchViewController.swift */; };
 		BB17C201208A3C2C00CC92B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */; };
 		BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */; };
@@ -58,6 +60,8 @@
 		BB0BB2DC208E460200936A8A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BB0BB2DE208E461700936A8A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB0BB2E0208E462700936A8A /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		BB1621EE2097B51500A3211E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1621F02097B51500A3211E /* JMMaskTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JMMaskTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB17C1FE208A3C0200CC92B9 /* LauchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
 		BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1621EF2097B51500A3211E /* Alamofire.framework in Frameworks */,
+				BB1621F12097B51500A3211E /* JMMaskTextField.framework in Frameworks */,
 				BB73CAA8208A370E00387A03 /* Foundation.framework in Frameworks */,
 				BB839E15208A362900C06A2A /* FacebookCore.framework in Frameworks */,
 				BB839E17208A362900C06A2A /* FacebookLogin.framework in Frameworks */,
@@ -238,6 +244,8 @@
 		BBDB544820878B2800C43C5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB1621EE2097B51500A3211E /* Alamofire.framework */,
+				BB1621F02097B51500A3211E /* JMMaskTextField.framework */,
 				BB73CAA7208A370E00387A03 /* Foundation.framework */,
 				BB839E14208A362900C06A2A /* FacebookCore.framework */,
 				BB839E16208A362900C06A2A /* FacebookLogin.framework */,
@@ -428,19 +436,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/JMMaskTextField/JMMaskTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JMMaskTextField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -652,8 +664,9 @@
 			baseConfigurationReference = E3C8F2FF18A3BE278B96E0DE /* Pods-app_cemig.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A8CWCR5M6;
+				DEVELOPMENT_TEAM = A4KQ8DYU5B;
 				INFOPLIST_FILE = app_cemig/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,6 +674,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -671,8 +685,9 @@
 			baseConfigurationReference = EF6B98119328EF03A0E9512D /* Pods-app_cemig.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A8CWCR5M6;
+				DEVELOPMENT_TEAM = A4KQ8DYU5B;
 				INFOPLIST_FILE = app_cemig/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,6 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

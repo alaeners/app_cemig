@@ -3,11 +3,12 @@
 
 target 'app_cemig' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-  pod 'FacebookCore' 
-  pod 'FacebookLogin'
-  pod 'Alamofire'  
-  pod 'SwiftMaskText'
+    use_frameworks!
+    pod 'FacebookCore' 
+    pod 'FacebookLogin'
+    pod 'Alamofire'  
+    pod 'JMMaskTextField'
+
   # Pods for app_cemig
 
   target 'app_cemigTests' do
@@ -19,5 +20,4 @@ target 'app_cemig' do
     inherit! :search_paths
     # Pods for testing
   end
-
 end

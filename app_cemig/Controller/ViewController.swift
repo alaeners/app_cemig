@@ -27,11 +27,6 @@ class ViewController: UIViewController {
     }
     
     // MARK: Buttons
-    //    @IBAction func logonButton(_ sender: UIButton) {
-    //        let _:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginStoryboardSegueController") as UIViewController
-    //
-    //        self.performSegue(withIdentifier: "LoginStoryboardSegueController", sender: self)
-    //    }
     
     @IBAction func loginFBButton(_ sender: UIButton) {
         loginButtonClicked()
@@ -40,7 +35,8 @@ class ViewController: UIViewController {
     func loginButtonClicked() {
         let loginManager = LoginManager()
         
-        loginManager.logIn(readPermissions: [ .publicProfile, .email], viewController: self) { LoginResult in
+        loginManager.logIn(readPermissions: [ .publicProfile, .email], viewController: self)
+        { LoginResult in
             switch LoginResult {
             case .failed(let error):
                 print(error)
@@ -48,6 +44,8 @@ class ViewController: UIViewController {
                 print("Login Cancelado pelo usuário -- se cancelado volta para a tela principal do app")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Login Efetuado com Sucesso--- na verdade aqui abre se a home ou a tela de cadastro para atualizar informações, ou seja eu farei essa validação aqui" )
+                
+                
             }
         }
     }
