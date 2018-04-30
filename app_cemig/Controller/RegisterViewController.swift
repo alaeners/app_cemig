@@ -214,8 +214,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     
     // MARK: - Buttons
     @IBAction func findCEPButton(_ sender: Any) {
+        var cep = cepTextField.text?.replacingOccurrences(of: ".", with: "")
+        cep = cep?.replacingOccurrences(of: "-", with: "")
         
-        let urlString = URL(string: "https://viacep.com.br/ws/"+cepTextField.text!+"/json")
+        
+        let urlString = URL(string: "https://viacep.com.br/ws/"+cep!+"/json")
         if let url = urlString {
             _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -231,8 +234,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                                 self.cepTextField.text! = cep.cep
                                 self.localidadeTextField.text! = cep.localidade
                                 
-                            } catch let jsonErr {
-                                print("Error serializing json", jsonErr)
+                            } catch _ {
+                                let view = UIAlertController(title: "Erro ao Bsucar CEP", message: "O CEP Informado não pode ser localizado", preferredStyle: .alert)
+                                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                                    //Do some thing here
+                                    view.dismiss(animated: true) {() -> Void in }
+                                })
+                                view.addAction(ok)
+                                self.present(view, animated: true) {() -> Void in }
                             }
                         }
                     }
@@ -274,46 +283,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         camposIsEmpty(campo: passwordRegisterTextField)
         camposIsEmpty(campo: confPasswordRegisterTextField)
         camposIsEmpty(campo: localidadeTextField)
-
-        
+   
     
     }
-    
-    // MARK: Funcs
-    
 
-    
-    func maskTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        switch textField {
-        case cpfTextField:
-            
-            if string.count == 0 {
-                return true
-            }
-            if (textField.text?.count ?? 0) > 11 {
-                return false
-            }
-            if (textField.text?.count ?? 0) == 3 || (textField.text?.count ?? 0) == 7 {
-                textField.text = textField.text ?? "" + (".")
-            } else if (textField.text?.count ?? 0) == 11 {
-                textField.text = textField.text ?? "" + ("-")
-            }
-            
-            
-        case dateTextField: break
-            
-        case cepTextField: break
-        case emailRegisterTextField: break
-        case confEmailRegisterTextField: break
-        case passwordRegisterTextField: break
-        case confPasswordRegisterTextField: break
-            
-            
-        default:
-            break
-        }
-        
-        return true
-    }
+
 }
