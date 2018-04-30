@@ -8,11 +8,10 @@
 
 import UIKit
 import Foundation
-
+import Alamofire
 
 class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
-    var bancoDeDados: [String: Any] = [:]    
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
@@ -30,138 +29,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         confPasswordRegisterTextField.delegate = self
         localidadeTextField.delegate = self
         scrollViewRegister.delegate = self
-       
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
-    
-    func showMessage(){
-        // Opa algo ta vazio isso aí! Verifica os campos e tenta de novo
-        let view = UIAlertController(title: "Campos Vazios", message: "Verifique as informações e tente novamente", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-            //Do some thing here
-            view.dismiss(animated: true) {() -> Void in }
-        })
-        view.addAction(ok)
-        present(view, animated: true) {() -> Void in }
-        
-        return
-    }
-    
-    func camposIsEmpty(campo: UITextField) -> Bool {
-        switch campo {
-        case nameTextField:
-            if nameTextField.text! == "" {
-                showMessage()
-            }
-            
-        case cpfTextField:
-            if cpfTextField.text! == "" {
-                showMessage()
-            }
-            
-        case dateTextField:
-            if dateTextField.text! == "" {
-                showMessage()
-            }
-            
-        case cepTextField:
-            if cepTextField.text! == "" {
-                showMessage()
-            }
-            
-        case ruaTextField:
-            if ruaTextField.text! == "" {
-                showMessage()
-            }
-            
-        case numberTextField:
-            if numberTextField.text! == "" {
-                showMessage()
-            }
-            
-        case bairroTextField:
-            if bairroTextField.text! == "" {
-                showMessage()
-            }
-            
-        case ufTextField:
-            if ufTextField.text! == "" {
-                showMessage()
-            }
-            
-        case complementoTextField:
-            if complementoTextField.text! == "" {
-                showMessage()
-            }
-            
-        case emailRegisterTextField:
-            if emailRegisterTextField.text! == "" {
-                showMessage()
-            }
-            
-        case confEmailRegisterTextField:
-            if confEmailRegisterTextField.text! == "" {
-                showMessage()
-            }
-            
-        case passwordRegisterTextField:
-            if passwordRegisterTextField.text! == "" {
-                showMessage()
-            }
-            
-        case confPasswordRegisterTextField:
-            if confPasswordRegisterTextField.text! == "" {
-                showMessage()
-            }
-            
-        case localidadeTextField:
-            if localidadeTextField.text! == "" {
-                showMessage()
-            }
-            
-        default:
-            let cpf: Int? = Int(cpfTextField.text!)
-            let numberHouse: Int? = Int(numberTextField.text!)
-            
-            for _ in bancoDeDados {
-                bancoDeDados["nome"] =  nameTextField.text!
-                bancoDeDados["cpf"] =  cpf
-                bancoDeDados["data_nasc"] =  dateTextField.text!
-                bancoDeDados["cep"] =  cepTextField.text!
-                bancoDeDados["rua"] =  ruaTextField.text!
-                bancoDeDados["numberHouse"] =  numberHouse
-                bancoDeDados["bairro"] =  bairroTextField.text!
-                bancoDeDados["uf"] =  ufTextField.text!
-                bancoDeDados["complemento"] =  complementoTextField.text!
-                bancoDeDados["email"] =  emailRegisterTextField.text!
-                bancoDeDados["password"] =  passwordRegisterTextField.text!
-                
-                let view = UIAlertController(title: "Salvou", message: "Registro Realizado com sucesso", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                    //Do some thing here
-                    view.dismiss(animated: true) {() -> Void in }
-                })
-                view.addAction(ok)
-                present(view, animated: true) {() -> Void in }
-            }
-        }
-        return true
     }
     //MARK: - Scrollviews
     @IBOutlet var scrollViewRegister: UIScrollView!
@@ -199,6 +71,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     @IBOutlet weak var localidadeLabel: UILabel!
     
     // MARK: -  Constants
+    //Acesso a API de CEP
     struct Cep: Codable {
         let cep: String
         let uf: String
@@ -211,13 +84,35 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         let gia: String
         
     }
+    //Acesso a API de Cadastro de usuário
+    struct RegisterUser: Codable {
+        let nameTextField: String
+        let cpfTextField: String
+        let dateTextField:String
+        let ruaTextField: String
+        let numberTextField: String
+        let bairroTextField: String
+        let ufTextField: String
+        let complementoTextField: String
+        let emailRegisterTextField: String
+        let confEmailRegisterTextField: String
+        let passwordRegisterTextField: String
+        let confPasswordRegisterTextField: String
+        let cep: String
+        let uf: String
+        let localidade: String
+        let bairro: String
+        let logradouro: String
+        let complemento: String
+        
+    }
     
     // MARK: - Buttons
     @IBAction func findCEPButton(_ sender: Any) {
         var cep = cepTextField.text?.replacingOccurrences(of: ".", with: "")
         cep = cep?.replacingOccurrences(of: "-", with: "")
         
-        
+        //json com método GET
         let urlString = URL(string: "https://viacep.com.br/ws/"+cep!+"/json")
         if let url = urlString {
             _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -269,23 +164,131 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     
     @IBAction func saveRegisterButton(_ sender: UIButton) {
         
-        camposIsEmpty(campo: nameTextField)
-        camposIsEmpty(campo: cpfTextField)
-        camposIsEmpty(campo: dateTextField)
-        camposIsEmpty(campo: cepTextField)
-        camposIsEmpty(campo: ruaTextField)
-        camposIsEmpty(campo: numberTextField)
-        camposIsEmpty(campo: bairroTextField)
-        camposIsEmpty(campo: ufTextField)
-        camposIsEmpty(campo: complementoTextField)
-        camposIsEmpty(campo: emailRegisterTextField)
-        camposIsEmpty(campo: confEmailRegisterTextField)
-        camposIsEmpty(campo: passwordRegisterTextField)
-        camposIsEmpty(campo: confPasswordRegisterTextField)
-        camposIsEmpty(campo: localidadeTextField)
-   
-    
+        let validaFieldIsEmpty: Bool = true
+        
+        if validaFieldIsEmpty{
+            camposIsEmpty(campo: nameTextField)
+            camposIsEmpty(campo: cpfTextField)
+            camposIsEmpty(campo: dateTextField)
+            camposIsEmpty(campo: cepTextField)
+            camposIsEmpty(campo: ruaTextField)
+            camposIsEmpty(campo: numberTextField)
+            camposIsEmpty(campo: bairroTextField)
+            camposIsEmpty(campo: ufTextField)
+            camposIsEmpty(campo: complementoTextField)
+            camposIsEmpty(campo: emailRegisterTextField)
+            camposIsEmpty(campo: confEmailRegisterTextField)
+            camposIsEmpty(campo: passwordRegisterTextField)
+            camposIsEmpty(campo: confPasswordRegisterTextField)
+            camposIsEmpty(campo: localidadeTextField)
+        }
+        
+        var cpf = self.cpfTextField.text?.replacingOccurrences(of: ".", with: "")
+        cpf = cpf?.replacingOccurrences(of: "-", with: "")
+        
+        var cep = self.cepTextField.text?.replacingOccurrences(of: ".", with: "")
+        cep = cep?.replacingOccurrences(of: "-", with: "")
+        
+        let parameters = [
+            "nome": self.nameTextField.text!,
+            "cpf": cpf!,
+            "data_nasc": self.dateTextField.text!,
+            "cep": cep!,
+            "rua": self.ruaTextField.text!,
+            "number": self.numberTextField.text!,
+            "bairro": self.bairroTextField.text!,
+            "uf": self.ufTextField.text!,
+            "complemento": self.complementoTextField.text!,
+            "localidade": self.localidadeTextField.text!,
+            "email": self.emailRegisterTextField.text!,
+            "password": self.passwordRegisterTextField.text!
+        ]
+        let url = "https://apicemig.azurewebsites.net/api/usuario"
+        Alamofire.request(url, method:.post, parameters:parameters, encoding: URLEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                let view = UIAlertController(title: "Dados Salvos", message: "Registro Realizado com sucesso", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                    //Do some thing here
+                    view.dismiss(animated: true) {() -> Void in }
+                })
+                view.addAction(ok)
+                self.present(view, animated: true) {() -> Void in }
+                
+            case .failure(_):
+                let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado, tente novamente", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                    //Do some thing here
+                    view.dismiss(animated: true) {() -> Void in }
+                })
+                view.addAction(ok)
+                self.present(view, animated: true) {() -> Void in }
+            }
+        }
+        
+        
     }
-
-
+    
+    //MARK: - Functions
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+    func showMessage(){
+        // Opa algo ta vazio isso aí! Verifica os campos e tenta de novo
+        let view = UIAlertController(title: "Campos Vazios", message: "Verifique as informações e tente novamente", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+            //Do some thing here
+            view.dismiss(animated: true) {() -> Void in }
+        })
+        view.addAction(ok)
+        present(view, animated: true) {() -> Void in }
+        
+        return
+    }
+    
+    func camposIsEmpty(campo: UITextField){
+        switch campo {
+        case nameTextField:
+            if nameTextField.text! == "" {showMessage()}
+        case cpfTextField:
+            if cpfTextField.text! == "" {showMessage()}
+        case dateTextField:
+            if dateTextField.text! == "" {showMessage()}
+        case cepTextField:
+            if cepTextField.text! == "" {showMessage()}
+        case ruaTextField:
+            if ruaTextField.text! == "" {showMessage()}
+        case numberTextField:
+            if numberTextField.text! == "" {showMessage()}
+        case bairroTextField:
+            if bairroTextField.text! == "" {showMessage()}
+        case ufTextField:
+            if ufTextField.text! == "" {showMessage()}
+        case complementoTextField:
+            if complementoTextField.text! == "" {showMessage()}
+        case emailRegisterTextField:
+            if emailRegisterTextField.text! == "" {showMessage()}
+        case confEmailRegisterTextField:
+            if confEmailRegisterTextField.text! == "" {showMessage()}
+        case passwordRegisterTextField:
+            if passwordRegisterTextField.text! == "" {showMessage()}
+        case confPasswordRegisterTextField:
+            if confPasswordRegisterTextField.text! == "" {showMessage()}
+        case localidadeTextField:
+            if localidadeTextField.text! == "" {showMessage()}
+        default:
+            return
+        }
+   }    
 }
