@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register View Controller-->
+        <!--RegisterViewController-->
         <scene sceneID="MwJ-rh-n1O">
             <objects>
-                <viewController id="1um-iz-Z7D" customClass="RegisterViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="RegisterViewController" id="1um-iz-Z7D" customClass="RegisterViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KoS-eI-X2x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,11 +387,20 @@
                         <outlet property="scrollViewRegister" destination="b1v-wL-Kee" id="cNx-pY-fPJ"/>
                         <outlet property="ufLabel" destination="BkM-Cw-LLR" id="ms4-jW-voT"/>
                         <outlet property="ufTextField" destination="GtH-dJ-Kja" id="3LU-mC-h98"/>
+                        <segue destination="H2F-tA-j9d" kind="showDetail" identifier="Home" id="c9c-4N-e7t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaz-Ef-e5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="88.799999999999997" y="-50.824587706146929"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="gpr-5T-dZx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="H2F-tA-j9d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DK5-9t-HO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="-325"/>
         </scene>
     </scenes>
     <resources>

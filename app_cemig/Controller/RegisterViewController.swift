@@ -103,8 +103,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         let localidade: String
         let bairro: String
         let logradouro: String
-        let complemento: String
-        
+        let complemento: String        
     }
     
     // MARK: - Buttons
@@ -214,6 +213,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }
+                self.cleanFields()
+                
+                performSegue(withIdentifier: Home, sender: self)
+                
+//                let storyboardHome = UIStoryboard(name: "Home.storyboard", bundle: nil)
+//                let homeViewController = storyboardHome.instantiateViewController(withIdentifier: "HomeViewController")
+                
+
                 
             case .failure(_):
                 let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado, tente novamente", preferredStyle: .alert)
@@ -230,6 +237,25 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     }
     
     //MARK: - Functions
+    
+    func cleanFields(){
+        self.nameTextField.text = ""
+        self.cpfTextField.text = ""
+        self.dateTextField.text = ""
+        self.cepTextField.text = ""
+        self.ruaTextField.text = ""
+        self.numberTextField.text = ""
+        self.bairroTextField.text = ""
+        self.ufTextField.text = ""
+        self.complementoTextField.text = ""
+        self.emailRegisterTextField.text = ""
+        self.confEmailRegisterTextField.text = ""
+        self.passwordRegisterTextField.text = ""
+        self.confPasswordRegisterTextField.text = ""
+        self.localidadeTextField.text = ""
+        
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
