@@ -215,13 +215,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 self.present(view, animated: true) {() -> Void in }
                 self.cleanFields()
                 
-                performSegue(withIdentifier: Home, sender: self)
-                
-//                let storyboardHome = UIStoryboard(name: "Home.storyboard", bundle: nil)
-//                let homeViewController = storyboardHome.instantiateViewController(withIdentifier: "HomeViewController")
-                
-
-                
             case .failure(_):
                 let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado, tente novamente", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
@@ -232,8 +225,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 self.present(view, animated: true) {() -> Void in }
             }
         }
-        
-        
     }
     
     //MARK: - Functions

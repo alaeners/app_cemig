@@ -14,7 +14,6 @@
 		BB0BB2DF208E461700936A8A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DE208E461700936A8A /* Home.storyboard */; };
 		BB0BB2E1208E462700936A8A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2E0208E462700936A8A /* Register.storyboard */; };
 		BB1621EF2097B51500A3211E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1621EE2097B51500A3211E /* Alamofire.framework */; };
-		BB1621F12097B51500A3211E /* JMMaskTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1621F02097B51500A3211E /* JMMaskTextField.framework */; };
 		BB17C1FF208A3C0200CC92B9 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C1FE208A3C0200CC92B9 /* LauchViewController.swift */; };
 		BB17C201208A3C2C00CC92B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */; };
 		BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */; };
@@ -25,6 +24,7 @@
 		BB839E19208A362900C06A2A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB839E18208A362900C06A2A /* FBSDKCoreKit.framework */; };
 		BB839E1B208A362900C06A2A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB839E1A208A362900C06A2A /* FBSDKLoginKit.framework */; };
 		BB92222F208E24A4003875FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92222E208E24A4003875FE /* Extensions.swift */; };
+		BBCAE8362097F0C100870CAE /* JMMaskTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCAE8352097F0C100870CAE /* JMMaskTextField.framework */; };
 		BBDB541B2087834400C43C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB541A2087834400C43C5D /* AppDelegate.swift */; };
 		BBDB541D2087834400C43C5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB541C2087834400C43C5D /* ViewController.swift */; };
 		BBDB54202087834400C43C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDB541E2087834400C43C5D /* Main.storyboard */; };
@@ -72,6 +72,7 @@
 		BB839E18208A362900C06A2A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB839E1A208A362900C06A2A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB92222E208E24A4003875FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BBCAE8352097F0C100870CAE /* JMMaskTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JMMaskTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDB54172087834400C43C5D /* app_cemig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_cemig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDB541A2087834400C43C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBDB541C2087834400C43C5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCAE8362097F0C100870CAE /* JMMaskTextField.framework in Frameworks */,
 				BB1621EF2097B51500A3211E /* Alamofire.framework in Frameworks */,
-				BB1621F12097B51500A3211E /* JMMaskTextField.framework in Frameworks */,
 				BB73CAA8208A370E00387A03 /* Foundation.framework in Frameworks */,
 				BB839E15208A362900C06A2A /* FacebookCore.framework in Frameworks */,
 				BB839E17208A362900C06A2A /* FacebookLogin.framework in Frameworks */,
@@ -244,6 +245,7 @@
 		BBDB544820878B2800C43C5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBCAE8352097F0C100870CAE /* JMMaskTextField.framework */,
 				BB1621EE2097B51500A3211E /* Alamofire.framework */,
 				BB1621F02097B51500A3211E /* JMMaskTextField.framework */,
 				BB73CAA7208A370E00387A03 /* Foundation.framework */,
@@ -271,6 +273,7 @@
 				BBDB54142087834400C43C5D /* Frameworks */,
 				BBDB54152087834400C43C5D /* Resources */,
 				929B43A6FEA5CAB8F7F311E2 /* [CP] Embed Pods Frameworks */,
+				71C139D3BF1C1E0019079FAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,6 +292,8 @@
 				BBDB54272087834700C43C5D /* Sources */,
 				BBDB54282087834700C43C5D /* Frameworks */,
 				BBDB54292087834700C43C5D /* Resources */,
+				58D38F451553337780BED641 /* [CP] Embed Pods Frameworks */,
+				AA9EC5195850DAFD77C5743B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,6 +313,8 @@
 				BBDB54322087834700C43C5D /* Sources */,
 				BBDB54332087834700C43C5D /* Frameworks */,
 				BBDB54342087834700C43C5D /* Resources */,
+				2C92396E56F69D59D8D70CCC /* [CP] Embed Pods Frameworks */,
+				66C2DD58D465E06737AB1018 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,6 +400,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2C92396E56F69D59D8D70CCC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58D38F451553337780BED641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigTests/Pods-app_cemigTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66C2DD58D465E06737AB1018 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71C139D3BF1C1E0019079FAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7200B604AD5D0FC053D0702C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +524,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA9EC5195850DAFD77C5743B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigTests/Pods-app_cemigTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E82BA1DDF4CEA363DE92B496 /* [CP] Check Pods Manifest.lock */ = {
@@ -668,10 +750,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemig/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -689,10 +768,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemig/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -710,11 +786,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -732,11 +804,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -753,11 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -774,11 +838,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
