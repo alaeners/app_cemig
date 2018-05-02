@@ -28,9 +28,16 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         passwordRegisterTextField.delegate = self
         confPasswordRegisterTextField.delegate = self
         localidadeTextField.delegate = self
-        scrollViewRegister.delegate = self
+        scrollViewRegister.delegate = self     
+        
         
     }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -181,6 +188,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             camposIsEmpty(campo: confPasswordRegisterTextField)
             camposIsEmpty(campo: localidadeTextField)
         }
+        setDadosInAPI()
+    }
+    
+    //MARK: - Functions
+    
+    func setDadosInAPI(){
+        
         
         var cpf = self.cpfTextField.text?.replacingOccurrences(of: ".", with: "")
         cpf = cpf?.replacingOccurrences(of: "-", with: "")
@@ -202,6 +216,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             "email": self.emailRegisterTextField.text!,
             "password": self.passwordRegisterTextField.text!
         ]
+        
         let url = "https://apicemig.azurewebsites.net/api/usuario"
         Alamofire.request(url, method:.post, parameters:parameters, encoding: URLEncoding.default).responseJSON { response in
             switch response.result {
@@ -215,8 +230,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 self.present(view, animated: true) {() -> Void in }
                 self.cleanFields()
                 
+                self.performSegue(withIdentifier: "HomeViewController", sender:self)
+
+                
             case .failure(_):
-                let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado, tente novamente", preferredStyle: .alert)
+                let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado. Verifique CPF ou E-mail. Um deles já consta em nosso sistema!", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                     //Do some thing here
                     view.dismiss(animated: true) {() -> Void in }
@@ -226,8 +244,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             }
         }
     }
-    
-    //MARK: - Functions
     
     func cleanFields(){
         self.nameTextField.text = ""
@@ -248,18 +264,18 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+//    }
+//    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+//    }
     
     func showMessage(){
         // Opa algo ta vazio isso aí! Verifica os campos e tenta de novo
@@ -278,32 +294,46 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         switch campo {
         case nameTextField:
             if nameTextField.text! == "" {showMessage()}
+            break
         case cpfTextField:
             if cpfTextField.text! == "" {showMessage()}
+            break
         case dateTextField:
             if dateTextField.text! == "" {showMessage()}
+            break
         case cepTextField:
             if cepTextField.text! == "" {showMessage()}
+            break
         case ruaTextField:
             if ruaTextField.text! == "" {showMessage()}
+            break
         case numberTextField:
             if numberTextField.text! == "" {showMessage()}
+            break
         case bairroTextField:
             if bairroTextField.text! == "" {showMessage()}
+            break
         case ufTextField:
             if ufTextField.text! == "" {showMessage()}
+            break
         case complementoTextField:
             if complementoTextField.text! == "" {showMessage()}
+            break
         case emailRegisterTextField:
             if emailRegisterTextField.text! == "" {showMessage()}
+            break
         case confEmailRegisterTextField:
             if confEmailRegisterTextField.text! == "" {showMessage()}
+            break
         case passwordRegisterTextField:
             if passwordRegisterTextField.text! == "" {showMessage()}
+            break
         case confPasswordRegisterTextField:
             if confPasswordRegisterTextField.text! == "" {showMessage()}
+            break
         case localidadeTextField:
             if localidadeTextField.text! == "" {showMessage()}
+            break
         default:
             return
         }
