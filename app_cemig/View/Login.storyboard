@@ -13,7 +13,7 @@
         <!--LoginViewController-->
         <scene sceneID="dV1-Pi-9ea">
             <objects>
-                <viewController storyboardIdentifier="LoginStoryboard" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rmg-Da-rwN" customClass="LoginViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewStoryboard" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rmg-Da-rwN" customClass="LoginViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49a-lo-Ipq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
