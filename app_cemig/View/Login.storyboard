@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="dV1-Pi-9ea">
             <objects>
-                <viewController id="rmg-Da-rwN" customClass="LoginViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginStoryboard" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rmg-Da-rwN" customClass="LoginViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49a-lo-Ipq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButtonWithSender:" destination="rmg-Da-rwN" eventType="touchUpInside" id="wMP-aH-7j5"/>
+                                    <action selector="cancelButton:" destination="rmg-Da-rwN" eventType="touchUpOutside" id="4Kq-r6-dYS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-wI-ZKP">
@@ -105,6 +105,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vd9-0i-UhV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YMw-q2-jcg"/>
                     <connections>
                         <outlet property="emailTextField" destination="uwS-zG-rJX" id="K9t-wv-o4v"/>
                         <outlet property="passwordTextField" destination="egb-oJ-O2o" id="vCR-5g-Eno"/>
@@ -112,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RH-DV-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="134.48275862068968"/>
+            <point key="canvasLocation" x="879.20000000000005" y="134.48275862068968"/>
         </scene>
     </scenes>
     <resources>

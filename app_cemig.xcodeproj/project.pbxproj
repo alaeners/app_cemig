@@ -18,6 +18,7 @@
 		BB17C201208A3C2C00CC92B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */; };
 		BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */; };
 		BB17C205208A518500CC92B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C204208A518500CC92B9 /* LoginViewController.swift */; };
+		BB589CA220C05D08007412C5 /* ConsumerProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */; };
 		BB73CAA8208A370E00387A03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB73CAA7208A370E00387A03 /* Foundation.framework */; };
 		BB839E15208A362900C06A2A /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB839E14208A362900C06A2A /* FacebookCore.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BB839E17208A362900C06A2A /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB839E16208A362900C06A2A /* FacebookLogin.framework */; };
@@ -66,6 +67,7 @@
 		BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BB17C204208A518500CC92B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConsumerProfile.storyboard; sourceTree = "<group>"; };
 		BB73CAA7208A370E00387A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB839E14208A362900C06A2A /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB839E16208A362900C06A2A /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				BB0BB2DC208E460200936A8A /* Login.storyboard */,
 				BB0BB2DE208E461700936A8A /* Home.storyboard */,
 				BB0BB2E0208E462700936A8A /* Register.storyboard */,
+				BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB589CA220C05D08007412C5 /* ConsumerProfile.storyboard in Resources */,
 				BB0BB2DD208E460200936A8A /* Login.storyboard in Resources */,
 				BB0BB2DF208E461700936A8A /* Home.storyboard in Resources */,
 				BBDB54252087834700C43C5D /* LaunchScreen.storyboard in Resources */,
@@ -750,7 +754,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemig/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -768,7 +775,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemig/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -786,7 +796,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -804,7 +818,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -821,7 +839,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -838,7 +860,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4A8CWCR5M6;
 				INFOPLIST_FILE = app_cemigUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemigUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

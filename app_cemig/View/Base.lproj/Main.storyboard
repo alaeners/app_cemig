@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="KyB-ZZ-z9U">
             <objects>
-                <viewController id="rGM-1e-DPv" customClass="ViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainStoryboard" id="rGM-1e-DPv" customClass="ViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jPw-YV-NhC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

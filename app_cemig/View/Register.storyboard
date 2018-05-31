@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RegisterViewController-->
+        <!--I-->
         <scene sceneID="MwJ-rh-n1O">
             <objects>
-                <viewController title="RegisterViewController" id="1um-iz-Z7D" customClass="RegisterViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="I" id="1um-iz-Z7D" customClass="RegisterViewController" customModule="app_cemig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KoS-eI-X2x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

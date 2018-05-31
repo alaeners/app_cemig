@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Alamofire
 
 class LoginViewController: UIViewController {
     
@@ -28,44 +29,43 @@ class LoginViewController: UIViewController {
     // MARK: - Buttons
     
     @IBAction func loginButton(_ sender: UIButton) {
-       
-        if emailTextField.text!.isEqual("email@email.com") && passwordTextField.text!.isEqual("senha123"){
-            //let hvc = HomeViewController.self
-            //Login com sucesso e chama a Home
-            let _:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as UIViewController
-            
-            self.performSegue(withIdentifier: "LoginHomeSegue", sender: self)
-            
-        } else {
-            
-            // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
-            let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                //Do some thing here
-                view.dismiss(animated: true) {() -> Void in }
-            })
-            view.addAction(ok)
-            present(view, animated: true) {() -> Void in }
-            
+        
+        let parametersLogin = [
+            "email": self.emailTextField.text!,
+            "password": self.passwordTextField.text!
+        ]
+        
+        let url = "https://apicemig.azurewebsites.net/api/login"
+        
+        Alamofire.request(url, method:.post, parameters: parametersLogin, encoding: URLEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                
+                let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
+                
+                self.present(viewController, animated: false, completion: nil)
+                
+            case .failure(_):
+                
+                // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
+                let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                    //Do some thing here
+                    view.dismiss(animated: true) {() -> Void in }
+                })
+                view.addAction(ok)
+                self.present(view, animated: true) {() -> Void in }
+                
+            }
         }
-    }
-    
-    @IBAction func cancelButton(sender: UIButton) {        
+    }    
+    @IBAction func cancelButton(_ sender: UIButton) {
+        
         emailTextField.text = ""
         passwordTextField.text = ""
+        
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainStoryboard") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
     }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

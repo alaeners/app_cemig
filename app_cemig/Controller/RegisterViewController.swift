@@ -28,8 +28,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         passwordRegisterTextField.delegate = self
         confPasswordRegisterTextField.delegate = self
         localidadeTextField.delegate = self
-        scrollViewRegister.delegate = self     
-        
+        scrollViewRegister.delegate = self
         
     }
     
@@ -202,7 +201,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         var cep = self.cepTextField.text?.replacingOccurrences(of: ".", with: "")
         cep = cep?.replacingOccurrences(of: "-", with: "")
         
-        let parameters = [
+        let parametersUser = [
             "nome": self.nameTextField.text!,
             "cpf": cpf!,
             "data_nasc": self.dateTextField.text!,
@@ -218,7 +217,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         ]
         
         let url = "https://apicemig.azurewebsites.net/api/usuario"
-        Alamofire.request(url, method:.post, parameters:parameters, encoding: URLEncoding.default).responseJSON { response in
+        Alamofire.request(url, method:.post, parameters:parametersUser, encoding: URLEncoding.default).responseJSON { response in
             switch response.result {
             case .success:
                 let view = UIAlertController(title: "Dados Salvos", message: "Registro Realizado com sucesso", preferredStyle: .alert)
@@ -228,10 +227,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }
-                self.cleanFields()
+                //                self.cleanFields()
                 
-                self.performSegue(withIdentifier: "HomeViewController", sender:self)
-
+                let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
+                
+                self.present(viewController, animated: false, completion: nil)
+                
                 
             case .failure(_):
                 let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado. Verifique CPF ou E-mail. Um deles já consta em nosso sistema!", preferredStyle: .alert)
@@ -262,20 +263,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         self.localidadeTextField.text = ""
         
     }
-    
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//    
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
-//    }
-//    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        scrollViewRegister.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-//    }
     
     func showMessage(){
         // Opa algo ta vazio isso aí! Verifica os campos e tenta de novo
@@ -337,5 +324,5 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         default:
             return
         }
-   }    
+    }    
 }
