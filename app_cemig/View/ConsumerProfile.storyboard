@@ -13,7 +13,7 @@
         <!--ConsumerProfileViewController-->
         <scene sceneID="t77-12-Ndo">
             <objects>
-                <viewController title="ConsumerProfileViewController" id="V1r-rQ-lDV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsumerProfileViewStoryboard" title="ConsumerProfileViewController" id="V1r-rQ-lDV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7WE-tN-JJc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

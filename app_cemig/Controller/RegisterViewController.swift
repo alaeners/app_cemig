@@ -165,6 +165,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         self.passwordRegisterTextField.text = ""
         self.confPasswordRegisterTextField.text = ""
         self.localidadeTextField.text = ""
+        
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainStoryboard") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
     }
     
     @IBAction func saveRegisterButton(_ sender: UIButton) {

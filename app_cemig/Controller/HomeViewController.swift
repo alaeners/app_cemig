@@ -20,4 +20,30 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func logoffButton(_ sender: UIButton) {
+        let viewController:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewStoryboard") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
+    }
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var cpfLabel: UILabel!
+    @IBOutlet var idadeLabel: UILabel!
+    
+    @IBAction func profileConsumerButton(_ sender: UIButton) {
+        
+        let viewController:UIViewController = UIStoryboard(name: "ConsumerProfile", bundle: nil).instantiateViewController(withIdentifier: "ConsumerProfileViewStoryboard") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func editProfileButton(_ sender: UIButton) {
+        let viewController:UIViewController = UIStoryboard(name: "ConsumerProfile", bundle: nil).instantiateViewController(withIdentifier: "ConsumerProfileViewStoryboard") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
+        
+    }
+    @IBAction func deleteProfileButton(_ sender: UIButton) {
+
+    }
 }

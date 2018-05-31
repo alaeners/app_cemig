@@ -30,35 +30,39 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         
-        let parametersLogin = [
-            "email": self.emailTextField.text!,
-            "password": self.passwordTextField.text!
-        ]
+        let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
         
-        let url = "https://apicemig.azurewebsites.net/api/login"
+        self.present(viewController, animated: false, completion: nil)
         
-        Alamofire.request(url, method:.post, parameters: parametersLogin, encoding: URLEncoding.default).responseJSON { response in
-            switch response.result {
-            case .success:
-                
-                let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
-                
-                self.present(viewController, animated: false, completion: nil)
-                
-            case .failure(_):
-                
-                // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
-                let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                    //Do some thing here
-                    view.dismiss(animated: true) {() -> Void in }
-                })
-                view.addAction(ok)
-                self.present(view, animated: true) {() -> Void in }
-                
-            }
-        }
-    }    
+//        let parametersLogin = [
+//            "email": self.emailTextField.text!,
+//            "password": self.passwordTextField.text!
+//        ]
+        
+//        let url = "https://apicemig.azurewebsites.net/api/login"
+//
+//        Alamofire.request(url, method:.post, parameters: parametersLogin, encoding: URLEncoding.default).responseJSON { response in
+//            switch response.result {
+//            case .success:
+//
+//                let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
+//
+//                self.present(viewController, animated: false, completion: nil)
+//
+//            case .failure(_):
+//
+//                // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
+//                let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
+//                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+//                    //Do some thing here
+//                    view.dismiss(animated: true) {() -> Void in }
+//                })
+//                view.addAction(ok)
+//                self.present(view, animated: true) {() -> Void in }
+//
+//            }
+//        }
+    }
     @IBAction func cancelButton(_ sender: UIButton) {
         
         emailTextField.text = ""
