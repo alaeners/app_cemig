@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButton:" destination="rmg-Da-rwN" eventType="touchUpOutside" id="4Kq-r6-dYS"/>
+                                    <action selector="cancelButton:" destination="rmg-Da-rwN" eventType="touchUpInside" id="k0M-E6-YH5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-wI-ZKP">
