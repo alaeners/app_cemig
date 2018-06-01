@@ -19,6 +19,7 @@
 		BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */; };
 		BB17C205208A518500CC92B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C204208A518500CC92B9 /* LoginViewController.swift */; };
 		BB589CA220C05D08007412C5 /* ConsumerProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */; };
+		BB589CA820C184B4007412C5 /* ConsumerProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB589CA720C184B4007412C5 /* ConsumerProfileCollectionViewController.swift */; };
 		BB73CAA8208A370E00387A03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB73CAA7208A370E00387A03 /* Foundation.framework */; };
 		BB839E15208A362900C06A2A /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB839E14208A362900C06A2A /* FacebookCore.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BB839E17208A362900C06A2A /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB839E16208A362900C06A2A /* FacebookLogin.framework */; };
@@ -68,6 +69,7 @@
 		BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BB17C204208A518500CC92B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConsumerProfile.storyboard; sourceTree = "<group>"; };
+		BB589CA720C184B4007412C5 /* ConsumerProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerProfileCollectionViewController.swift; sourceTree = "<group>"; };
 		BB73CAA7208A370E00387A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB839E14208A362900C06A2A /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB839E16208A362900C06A2A /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 				BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */,
 				BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */,
 				BB17C204208A518500CC92B9 /* LoginViewController.swift */,
+				BB589CA720C184B4007412C5 /* ConsumerProfileCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 			files = (
 				BB17C205208A518500CC92B9 /* LoginViewController.swift in Sources */,
 				BB17C1FF208A3C0200CC92B9 /* LauchViewController.swift in Sources */,
+				BB589CA820C184B4007412C5 /* ConsumerProfileCollectionViewController.swift in Sources */,
 				BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */,
 				BBDB541D2087834400C43C5D /* ViewController.swift in Sources */,
 				BBDB541B2087834400C43C5D /* AppDelegate.swift in Sources */,

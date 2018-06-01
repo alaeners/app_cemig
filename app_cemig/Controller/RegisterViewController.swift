@@ -166,9 +166,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         self.confPasswordRegisterTextField.text = ""
         self.localidadeTextField.text = ""
         
-        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainStoryboard") as UIViewController
         
-        self.present(viewController, animated: false, completion: nil)
     }
     
     @IBAction func saveRegisterButton(_ sender: UIButton) {
@@ -197,7 +195,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     //MARK: - Functions
     
     func setDadosInAPI(){
-        
         
         var cpf = self.cpfTextField.text?.replacingOccurrences(of: ".", with: "")
         cpf = cpf?.replacingOccurrences(of: "-", with: "")
