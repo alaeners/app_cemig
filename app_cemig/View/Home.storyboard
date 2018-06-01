@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,41 +64,42 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-uo-jZU">
-                                <rect key="frame" x="77" y="289" width="78" height="30"/>
-                                <state key="normal" title="CONSUMO"/>
-                                <connections>
-                                    <action selector="profileConsumerButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="ztC-pE-bC0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-2E-3Ft">
-                                <rect key="frame" x="306" y="289" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CANCEL"/>
-                                <connections>
-                                    <action selector="deleteProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="cfm-oS-8AI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81b-Tn-fwP">
-                                <rect key="frame" x="205" y="289" width="51" height="30"/>
-                                <state key="normal" title="EDITAR"/>
-                                <connections>
-                                    <action selector="editProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="eaf-1Z-fFO"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="anos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXZ-Fd-lSS">
                                 <rect key="frame" x="163" y="181" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-uo-jZU">
+                                <rect key="frame" x="25" y="289" width="78" height="30"/>
+                                <state key="normal" title="CONSUMO"/>
+                                <connections>
+                                    <action selector="profileConsumerButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="ztC-pE-bC0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81b-Tn-fwP">
+                                <rect key="frame" x="163" y="289" width="51" height="30"/>
+                                <state key="normal" title="EDITAR"/>
+                                <connections>
+                                    <action selector="editProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="eaf-1Z-fFO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-2E-3Ft">
+                                <rect key="frame" x="300" y="289" width="59" height="30"/>
+                                <state key="normal" title="CANCEL"/>
+                                <connections>
+                                    <action selector="deleteProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="cfm-oS-8AI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="81b-Tn-fwP" firstAttribute="baseline" secondItem="vfY-2E-3Ft" secondAttribute="baseline" id="2eA-SA-Hmu"/>
                             <constraint firstItem="fDx-3h-0DD" firstAttribute="leading" secondItem="QxP-2i-WvM" secondAttribute="leading" id="2hB-xj-XeF"/>
-                            <constraint firstItem="pmu-uo-jZU" firstAttribute="top" secondItem="kJF-51-vQu" secondAttribute="bottom" constant="56" id="3E2-iL-3Mr"/>
                             <constraint firstItem="QXZ-Fd-lSS" firstAttribute="centerX" secondItem="NMa-ji-snc" secondAttribute="centerX" id="B9e-yW-u6A"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="trailing" secondItem="IEG-8R-eBW" secondAttribute="trailing" id="Bv0-Q3-cJA"/>
+                            <constraint firstItem="pmu-uo-jZU" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="25" id="Doy-JO-auI"/>
+                            <constraint firstItem="81b-Tn-fwP" firstAttribute="leading" secondItem="QXZ-Fd-lSS" secondAttribute="leading" id="Dtw-c7-4Jj"/>
                             <constraint firstItem="On1-jd-0p7" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="319" id="F3a-67-Vpu"/>
                             <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="On1-jd-0p7" secondAttribute="trailing" constant="9" id="G6r-ya-mzh"/>
                             <constraint firstItem="On1-jd-0p7" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="20" id="Isa-Qd-N4s"/>
@@ -107,9 +109,11 @@
                             <constraint firstItem="QXZ-Fd-lSS" firstAttribute="leading" secondItem="kJF-51-vQu" secondAttribute="trailing" constant="32" id="P80-vB-KGI"/>
                             <constraint firstItem="kJF-51-vQu" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="124" id="a0u-nr-13d"/>
                             <constraint firstItem="QXZ-Fd-lSS" firstAttribute="baseline" secondItem="fDx-3h-0DD" secondAttribute="firstBaseline" id="clm-1K-16U"/>
+                            <constraint firstItem="pmu-uo-jZU" firstAttribute="baseline" secondItem="81b-Tn-fwP" secondAttribute="baseline" id="ei9-3y-v5T"/>
                             <constraint firstItem="kJF-51-vQu" firstAttribute="bottom" secondItem="QxP-2i-WvM" secondAttribute="bottom" id="gzg-yC-Hj3"/>
                             <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="QxP-2i-WvM" secondAttribute="trailing" constant="52" id="i54-ZD-CSA"/>
                             <constraint firstItem="fDx-3h-0DD" firstAttribute="top" secondItem="L84-2z-UrA" secondAttribute="bottom" constant="10" id="iGv-nN-EfH"/>
+                            <constraint firstItem="vfY-2E-3Ft" firstAttribute="trailing" secondItem="fML-QX-kpt" secondAttribute="trailingMargin" id="jLr-fY-LE0"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="top" secondItem="fML-QX-kpt" secondAttribute="top" id="kby-DF-HkA"/>
                             <constraint firstItem="L84-2z-UrA" firstAttribute="top" secondItem="On1-jd-0p7" secondAttribute="bottom" constant="72" id="kd6-5N-S38"/>
                             <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="QXZ-Fd-lSS" secondAttribute="trailing" constant="164" id="nF9-Sy-gmN"/>
@@ -117,8 +121,8 @@
                             <constraint firstItem="On1-jd-0p7" firstAttribute="trailing" secondItem="L84-2z-UrA" secondAttribute="trailing" id="r3M-pJ-JL2"/>
                             <constraint firstItem="fDx-3h-0DD" firstAttribute="baseline" secondItem="QXZ-Fd-lSS" secondAttribute="baseline" id="r4V-JV-TkL"/>
                             <constraint firstItem="kJF-51-vQu" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="32" id="uas-AM-2R9"/>
+                            <constraint firstItem="pmu-uo-jZU" firstAttribute="top" secondItem="kJF-51-vQu" secondAttribute="bottom" constant="56" id="vJW-Tb-P9o"/>
                             <constraint firstItem="L84-2z-UrA" firstAttribute="leading" secondItem="kJF-51-vQu" secondAttribute="trailing" constant="8" symbolic="YES" id="vfs-vr-Tsf"/>
-                            <constraint firstItem="QxP-2i-WvM" firstAttribute="centerX" secondItem="81b-Tn-fwP" secondAttribute="centerX" id="xFW-fK-RRn"/>
                             <constraint firstItem="L84-2z-UrA" firstAttribute="leading" secondItem="fDx-3h-0DD" secondAttribute="leading" id="zpk-gx-OUV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IEG-8R-eBW"/>
