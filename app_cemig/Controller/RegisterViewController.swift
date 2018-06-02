@@ -11,7 +11,6 @@ import Foundation
 import Alamofire
 
 class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
@@ -230,18 +229,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         Alamofire.request(url, method:.post, parameters:parametersUser, encoding: URLEncoding.default).responseJSON { response in
             switch response.result {
             case .success:
+                let defaults = UserDefaults.standard
+                defaults.set(self.emailRegisterTextField.text!, forKey: "EmailDefaults")
+                
                 let view = UIAlertController(title: "Dados Salvos", message: "Registro Realizado com sucesso", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                     //Do some thing here
+                    let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
+                    
+                    self.present(viewController, animated: false, completion: nil)
                     view.dismiss(animated: true) {() -> Void in }
+  
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }
-                
-                let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
-                
-                self.present(viewController, animated: false, completion: nil)
-                
                 
             case .failure(_):
                 let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado. Verifique CPF ou E-mail. Um deles já consta em nosso sistema!", preferredStyle: .alert)
