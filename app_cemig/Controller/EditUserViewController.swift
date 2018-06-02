@@ -310,9 +310,6 @@ class EditUserViewController: UIViewController {
         return
     }
     
-    
-    
-    
     /*
      // MARK: - Navigation
      
@@ -322,5 +319,4 @@ class EditUserViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }

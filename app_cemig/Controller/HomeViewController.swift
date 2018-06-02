@@ -88,21 +88,18 @@ class HomeViewController: UIViewController {
     
     @IBAction func profileConsumerButton(_ sender: UIButton) {
         
-        let viewController:UIViewController = UIStoryboard(name: "ConsumerProfile", bundle: nil).instantiateViewController(withIdentifier: "ConsumerProfileViewStoryboard") as UIViewController
+        let viewController:UIViewController = UIStoryboard(name: "AddProfile", bundle: nil).instantiateViewController(withIdentifier: "AddProfileStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)
     }
-    
-    
     
     @IBAction func editProfileButton(_ sender: UIButton) {
-        let viewController:UIViewController = UIStoryboard(name: "EditUserStoryboard", bundle: nil).instantiateViewController(withIdentifier: "EditUserViewStoryboard") as UIViewController
+        let viewController:UIViewController = UIStoryboard(name: "EditUser", bundle: nil).instantiateViewController(withIdentifier: "EditUserViewStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)
-        
-        
-        
+  
     }
+    
     @IBAction func deleteProfileButton(_ sender: UIButton) {
         let deleteUser = defaults.string(forKey: "EmailDefaults")
         if deleteUser != nil {
