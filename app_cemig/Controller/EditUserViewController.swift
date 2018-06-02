@@ -191,8 +191,6 @@ class EditUserViewController: UIViewController {
             camposIsEmpty(campo: bairroTextField)
             camposIsEmpty(campo: ufTextField)
             camposIsEmpty(campo: complementoTextField)
-            camposIsEmpty(campo: emailRegisterTextField)
-            camposIsEmpty(campo: confEmailRegisterTextField)
             camposIsEmpty(campo: passwordRegisterTextField)
             camposIsEmpty(campo: confPasswordRegisterTextField)
             camposIsEmpty(campo: localidadeTextField)
@@ -219,7 +217,7 @@ class EditUserViewController: UIViewController {
             "uf": self.ufTextField.text!,
             "complemento": self.complementoTextField.text!,
             "localidade": self.localidadeTextField.text!,
-            "email": self.emailRegisterTextField.text!,
+            "email": self.emailRegistradoLabel.text!,
             "password": self.passwordRegisterTextField.text!
         ]
         
