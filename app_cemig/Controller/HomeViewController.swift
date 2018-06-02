@@ -25,8 +25,7 @@ class HomeViewController: UIViewController {
         let bairro: String
         let uf: String
         let complemento: String
-        let localidade: String       
-        
+        let localidade: String
     }
     
     
@@ -38,7 +37,6 @@ class HomeViewController: UIViewController {
         if defaults.string(forKey: "EmailDefaults") != nil {
             
             let urlString = URL(string: "https://apicemig.azurewebsites.net/api/usuario/email/"+defaults.string(forKey: "EmailDefaults")!)
-            print(urlString)
             if let url = urlString {
                 _ = URLSession.shared.dataTask(with: url) {
                     (data, response, error) in
@@ -98,7 +96,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func editProfileButton(_ sender: UIButton) {
-        let viewController:UIViewController = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewStoryboard") as UIViewController
+        let viewController:UIViewController = UIStoryboard(name: "EditUserStoryboard", bundle: nil).instantiateViewController(withIdentifier: "EditUserViewStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)
         
