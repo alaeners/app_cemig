@@ -69,8 +69,7 @@ class EditUserViewController: UIViewController {
                                     self.ufTextField.text = user.uf
                                     self.complementoTextField.text = user.complemento
                                     self.localidadeTextField.text = user.localidade
-                                    self.emailRegisterTextField.text = user.email
-                                    self.confEmailRegisterTextField.text = ""
+                                    self.emailRegistradoLabel.text = user.email
                                     self.passwordRegisterTextField.text = ""
                                     self.confPasswordRegisterTextField.text = ""
                                     
@@ -117,6 +116,7 @@ class EditUserViewController: UIViewController {
     @IBOutlet weak var localidadeTextField: UITextField!
     
     // MARK: - Labels
+    @IBOutlet weak var emailRegistradoLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cpfLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -127,7 +127,6 @@ class EditUserViewController: UIViewController {
     @IBOutlet weak var ufLabel: UILabel!
     @IBOutlet weak var complementoLabel: UILabel!
     @IBOutlet weak var emailRegisterLabel: UILabel!
-    @IBOutlet weak var confEmailRegisterLabel: UILabel!
     @IBOutlet weak var passwordRegisterLabel: UILabel!
     @IBOutlet weak var confPasswordRegisterLabel: UILabel!
     @IBOutlet weak var localidadeLabel: UILabel!
@@ -230,7 +229,7 @@ class EditUserViewController: UIViewController {
             case .success:
                 let view = UIAlertController(title: "Dados Salvos", message: "Registro atualizado com sucesso", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                    //Do some thing here                    
+                    //Do some thing here
                     let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
                     
                     self.present(viewController, animated: false, completion: nil)
@@ -285,9 +284,6 @@ class EditUserViewController: UIViewController {
             break
         case emailRegisterTextField:
             if emailRegisterTextField.text! == "" {showMessage()}
-            break
-        case confEmailRegisterTextField:
-            if confEmailRegisterTextField.text! == "" {showMessage()}
             break
         case passwordRegisterTextField:
             if passwordRegisterTextField.text! == "" {showMessage()}
