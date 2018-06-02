@@ -125,6 +125,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN9-45-2jc" userLabel="btnCalcular">
+                                <rect key="frame" x="150" y="430" width="92" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="money_bag_dollar"/>
+                                <connections>
+                                    <action selector="CalcGasto:" destination="sQO-55-7ah" eventType="touchUpInside" id="GXE-eA-AGV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -151,5 +159,6 @@
         <image name="add-file" width="1600" height="1600"/>
         <image name="back" width="512" height="512"/>
         <image name="bgDefault" width="54" height="102"/>
+        <image name="money_bag_dollar" width="512" height="512"/>
     </resources>
 </document>

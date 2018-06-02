@@ -40,13 +40,68 @@ class AddProfileViewController: UIViewController {
         self.horasTextField.text = ""
         self.MinutosTextField.text = ""
     }
+    struct Valor: Decodable{
+        let Valor: Double
+    }
     
+   
+    
+    @IBAction func CalcGasto(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        let email = defaults.string(forKey: "EmailDefaults")
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = Locale.current
+        
+        let urlString = URL(string: "https://apicemig.azurewebsites.net/api/itemperfil/" + email!)
+        if let url = urlString {
+            _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            do {
+                                let conta =  try JSONDecoder().decode(Valor.self, from: data)
+                                let valorReal = currencyFormatter.string(from: NSNumber(value: conta.Valor))!
+                                
+                                let view = UIAlertController(title: "Calculo da Conta", message: "De acordo com seu perfil de consumo, sua conta de luz é de aproximadamente "+valorReal, preferredStyle: .alert)
+                                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                                    //Do some thing here
+                                    view.dismiss(animated: true) {() -> Void in }
+                                })
+                                view.addAction(ok)
+                                self.present(view, animated: true) {() -> Void in }
+                                
+                            } catch _ {
+                                let view = UIAlertController(title: "Erro ao calcular sua conta", message: "Favor tentar novamente mais tarde", preferredStyle: .alert)
+                                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                                    //Do some thing here
+                                    view.dismiss(animated: true) {() -> Void in }
+                                })
+                                view.addAction(ok)
+                                self.present(view, animated: true) {() -> Void in }
+                            }
+                        }
+                    }
+                }
+                }.resume()
+        }
+    }
     @IBAction func Voltar(_ sender: UIButton) {
         let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)
     }
     @IBAction func AddItem(_ sender: UIButton) {
+        
+        if Int(self.diasUsoTextField.text!)! > 30
+        {
+            
+        }
         
         let defaults = UserDefaults.standard
         let email = defaults.string(forKey: "EmailDefaults")
@@ -75,7 +130,7 @@ class AddProfileViewController: UIViewController {
                 self.present(view, animated: true) {() -> Void in }
                 
             case .failure(_):
-                let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado. Verifique CPF ou E-mail. Um deles já consta em nosso sistema!", preferredStyle: .alert)
+                let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                     //Do some thing here
                     view.dismiss(animated: true) {() -> Void in }
