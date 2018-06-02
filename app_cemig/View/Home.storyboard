@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,28 +22,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-ji-snc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-512" translatesAutoresizingMaskIntoConstraints="NO" id="kJF-51-vQu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-512" translatesAutoresizingMaskIntoConstraints="NO" id="kJF-51-vQu">
                                 <rect key="frame" x="32" y="144" width="99" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-jd-0p7" userLabel="logoff">
-                                <rect key="frame" x="319" y="40" width="47" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="power-512"/>
-                                <connections>
-                                    <action selector="logoffButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="3ow-ND-fO4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nome completo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-2z-UrA">
-                                <rect key="frame" x="139" y="150" width="227" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nome completo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-2z-UrA">
+                                <rect key="frame" x="139" y="150" width="227" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cpf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-2i-WvM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cpf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-2i-WvM">
                                 <rect key="frame" x="139" y="212" width="184" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -60,43 +50,79 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-uo-jZU">
-                                <rect key="frame" x="25" y="289" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CONSUMO"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-uo-jZU">
+                                <rect key="frame" x="63" y="283" width="58" height="60"/>
+                                <state key="normal" image="add-rule"/>
                                 <connections>
                                     <action selector="profileConsumerButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="ztC-pE-bC0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81b-Tn-fwP">
-                                <rect key="frame" x="163" y="289" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="EDITAR"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81b-Tn-fwP">
+                                <rect key="frame" x="151" y="284" width="60" height="59"/>
+                                <state key="normal" backgroundImage="editinguser_edituser_useedit_4520"/>
                                 <connections>
                                     <action selector="editProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="eaf-1Z-fFO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-2E-3Ft">
-                                <rect key="frame" x="300" y="289" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CANCEL"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-2E-3Ft">
+                                <rect key="frame" x="230" y="284" width="58" height="60"/>
+                                <state key="normal" backgroundImage="cancel-512"/>
                                 <connections>
                                     <action selector="deleteProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="cfm-oS-8AI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-ew-RuW" userLabel="emailLabel">
-                                <rect key="frame" x="106" y="49" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-ew-RuW" userLabel="emailLabel">
+                                <rect key="frame" x="106" y="49" width="217" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On1-jd-0p7" userLabel="logoff">
+                                <rect key="frame" x="331" y="40" width="36" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="8sa-LD-sKN"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="power-512"/>
+                                <connections>
+                                    <action selector="logoffButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="3ow-ND-fO4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="kJF-51-vQu" secondAttribute="bottom" constant="434" id="2Qc-bR-PxP"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="L84-2z-UrA" secondAttribute="trailing" constant="9" id="46z-IH-D5r"/>
+                            <constraint firstItem="L84-2z-UrA" firstAttribute="leading" secondItem="kJF-51-vQu" secondAttribute="trailing" constant="8" id="8C5-bj-kma"/>
+                            <constraint firstItem="QxP-2i-WvM" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="192" id="G3U-Rm-a0t"/>
+                            <constraint firstItem="81b-Tn-fwP" firstAttribute="leading" secondItem="pmu-uo-jZU" secondAttribute="trailing" constant="30" id="Gnk-4M-gm3"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="QxP-2i-WvM" secondAttribute="trailing" constant="52" id="GxV-SI-FqR"/>
+                            <constraint firstItem="On1-jd-0p7" firstAttribute="leading" secondItem="1BP-ew-RuW" secondAttribute="trailing" constant="8" id="K8Z-ZX-aLo"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="81b-Tn-fwP" secondAttribute="bottom" constant="324" id="Ksv-fw-DfL"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="1BP-ew-RuW" secondAttribute="bottom" constant="597" id="Lzz-cF-46M"/>
+                            <constraint firstItem="kJF-51-vQu" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="124" id="M9w-O5-k7P"/>
                             <constraint firstAttribute="trailing" secondItem="NMa-ji-snc" secondAttribute="trailing" id="N9G-iu-zRh"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="pmu-uo-jZU" secondAttribute="bottom" constant="324" id="QDP-J4-Bn6"/>
+                            <constraint firstItem="QxP-2i-WvM" firstAttribute="leading" secondItem="kJF-51-vQu" secondAttribute="trailing" constant="8" id="QL5-ku-VMa"/>
+                            <constraint firstItem="pmu-uo-jZU" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="63" id="RgB-05-UME"/>
+                            <constraint firstItem="1BP-ew-RuW" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="106" id="S9H-IB-ED7"/>
+                            <constraint firstItem="On1-jd-0p7" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="20" id="Vwt-rL-SkK"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="vfY-2E-3Ft" secondAttribute="bottom" constant="323" id="Y8b-4R-bn8"/>
+                            <constraint firstItem="81b-Tn-fwP" firstAttribute="top" secondItem="QxP-2i-WvM" secondAttribute="bottom" constant="51" id="YQx-FK-kh1"/>
+                            <constraint firstItem="On1-jd-0p7" firstAttribute="bottom" secondItem="1BP-ew-RuW" secondAttribute="bottom" id="bIe-gy-eoV"/>
+                            <constraint firstAttribute="trailing" secondItem="On1-jd-0p7" secondAttribute="trailing" constant="8" id="cXk-z6-Z4S"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="leading" secondItem="fML-QX-kpt" secondAttribute="leading" id="dnT-Ah-1yx"/>
+                            <constraint firstItem="pmu-uo-jZU" firstAttribute="top" secondItem="kJF-51-vQu" secondAttribute="bottom" constant="50" id="gKw-N3-W4X"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="pmu-uo-jZU" secondAttribute="trailing" constant="254" id="hqw-Gl-ekx"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="top" secondItem="fML-QX-kpt" secondAttribute="top" id="jyS-AG-wO9"/>
+                            <constraint firstItem="L84-2z-UrA" firstAttribute="top" secondItem="On1-jd-0p7" secondAttribute="bottom" constant="80" id="kTf-HW-cdg"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="81b-Tn-fwP" secondAttribute="trailing" constant="164" id="kta-fR-Eh7"/>
+                            <constraint firstItem="vfY-2E-3Ft" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="230" id="mZZ-mK-2Ho"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="QxP-2i-WvM" secondAttribute="bottom" constant="434" id="mj0-LC-5Op"/>
+                            <constraint firstItem="kJF-51-vQu" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="32" id="qTn-yN-sMA"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="kJF-51-vQu" secondAttribute="trailing" constant="244" id="r9K-oT-Jbf"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="vfY-2E-3Ft" secondAttribute="trailing" constant="87" id="rnd-cZ-Agn"/>
+                            <constraint firstItem="1BP-ew-RuW" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="29" id="s7S-Gl-w0B"/>
+                            <constraint firstItem="vfY-2E-3Ft" firstAttribute="top" secondItem="QxP-2i-WvM" secondAttribute="bottom" constant="51" id="wno-lC-xc2"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="centerX" secondItem="QXZ-Fd-lSS" secondAttribute="centerX" id="xyn-1B-JEN"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="bottom" secondItem="IEG-8R-eBW" secondAttribute="bottom" id="yFm-yo-CIz"/>
                         </constraints>
@@ -115,7 +141,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-rule" width="533" height="533"/>
         <image name="bgDefault" width="54" height="102"/>
+        <image name="cancel-512" width="512" height="512"/>
+        <image name="editinguser_edituser_useedit_4520" width="170" height="170"/>
         <image name="power-512" width="512" height="411"/>
         <image name="user-512" width="512" height="512"/>
     </resources>
