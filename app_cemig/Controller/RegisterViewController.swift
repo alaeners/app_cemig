@@ -237,7 +237,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }
-                //                self.cleanFields()
                 
                 let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
                 
@@ -270,8 +269,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         self.confEmailRegisterTextField.text = ""
         self.passwordRegisterTextField.text = ""
         self.confPasswordRegisterTextField.text = ""
-        self.localidadeTextField.text = ""
-        
+        self.localidadeTextField.text = ""        
     }
     
     func showMessage(){

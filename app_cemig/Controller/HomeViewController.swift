@@ -28,12 +28,11 @@ class HomeViewController: UIViewController {
         let localidade: String
     }
     
-    
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()        
         // Do any additional setup after loading the view.
         
-        let defaults = UserDefaults.standard
         if defaults.string(forKey: "EmailDefaults") != nil {
             
             let urlString = URL(string: "https://apicemig.azurewebsites.net/api/usuario/email/"+defaults.string(forKey: "EmailDefaults")!)
@@ -47,10 +46,10 @@ class HomeViewController: UIViewController {
                             DispatchQueue.main.async {
                                 do {
                                     let user =  try JSONDecoder().decode(SearchUser.self, from: data)
-                                    print(user.nome)
                                     self.nameLabel.text! = user.nome
                                     self.idadeLabel.text! = "26"
                                     self.cpfLabel.text! =  String(user.cpf)
+                                    self.emailLabel.text! = user.email
                                     
                                 } catch _ {
                                     let view = UIAlertController(title: "Falha ao carregar dados", message: "Favor executar logon novamente", preferredStyle: .alert)
@@ -81,6 +80,7 @@ class HomeViewController: UIViewController {
         self.present(viewController, animated: false, completion: nil)
     }
     
+    @IBOutlet var emailLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var cpfLabel: UILabel!
     @IBOutlet var idadeLabel: UILabel!
@@ -104,43 +104,36 @@ class HomeViewController: UIViewController {
         
     }
     @IBAction func deleteProfileButton(_ sender: UIButton) {
-        
-        let defaults = UserDefaults.standard
-        let email = defaults.string(forKey: "EmailDefaults")
-        
-        let userDelete: String = "https://apicemig.azurewebsites.net/api/usuario/email/"+email!
-        Alamofire.request(userDelete, method: .delete).responseJSON {
-            response in
-            guard response.result.error == nil else {
-                // got an error in getting the data, need to handle it
-                let view = UIAlertController(title: "Informações Inválidas", message: "Ocorreu um erro na execução, favor tente novamente", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                    //Do some thing here
-                    view.dismiss(animated: true) {() -> Void in }
-                })
-                view.addAction(ok)
-                self.present(view, animated: true) {() -> Void in }
-                
-                if let error = response.result.error {
+        let deleteUser = defaults.string(forKey: "EmailDefaults")
+        if deleteUser != nil {
+            let urlString = URL(string: "https://apicemig.azurewebsites.net/api/usuario/email/"+deleteUser!)
+            
+            Alamofire.request(urlString!, method: .delete, parameters: nil, encoding: URLEncoding.default).responseJSON{ response in
+                switch response.result {
+                case .success:
+                    let view = UIAlertController(title: "Dados Excluídos", message: "Registro excluído com sucesso", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                        //Do some thing here
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainStoryboard") as UIViewController
+                        
+                        self.present(viewController, animated: false, completion: nil)
+                        
+                        view.dismiss(animated: true) {() -> Void in }
+                    })
+                    view.addAction(ok)
+                    self.present(view, animated: true) {() -> Void in }
                     
-                    let view = UIAlertController(title: "Error ", message: (error as! String), preferredStyle: .alert)
+                case .failure(_):
+                    let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser excluído.", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                         //Do some thing here
                         view.dismiss(animated: true) {() -> Void in }
                     })
                     view.addAction(ok)
                     self.present(view, animated: true) {() -> Void in }
-                    
                 }
-                return
             }
-            let view = UIAlertController(title: "Sucesso! ", message: "Usuário deletado com sucesso, favor fechar o aplicativo", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                //Do some thing here
-                view.dismiss(animated: true) {() -> Void in }
-            })
-            view.addAction(ok)
-            self.present(view, animated: true) {() -> Void in }
-        }        
+        }
     }
+    
 }

@@ -91,13 +91,22 @@
                                     <action selector="deleteProfileButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="cfm-oS-8AI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-ew-RuW" userLabel="emailLabel">
+                                <rect key="frame" x="106" y="49" width="205" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1BP-ew-RuW" firstAttribute="centerY" secondItem="On1-jd-0p7" secondAttribute="centerY" id="2KE-vi-imJ"/>
                             <constraint firstItem="81b-Tn-fwP" firstAttribute="baseline" secondItem="vfY-2E-3Ft" secondAttribute="baseline" id="2eA-SA-Hmu"/>
                             <constraint firstItem="fDx-3h-0DD" firstAttribute="leading" secondItem="QxP-2i-WvM" secondAttribute="leading" id="2hB-xj-XeF"/>
+                            <constraint firstItem="IEG-8R-eBW" firstAttribute="bottom" secondItem="1BP-ew-RuW" secondAttribute="bottom" constant="597" id="8Uz-WA-39b"/>
                             <constraint firstItem="QXZ-Fd-lSS" firstAttribute="centerX" secondItem="NMa-ji-snc" secondAttribute="centerX" id="B9e-yW-u6A"/>
                             <constraint firstItem="NMa-ji-snc" firstAttribute="trailing" secondItem="IEG-8R-eBW" secondAttribute="trailing" id="Bv0-Q3-cJA"/>
+                            <constraint firstItem="1BP-ew-RuW" firstAttribute="top" secondItem="IEG-8R-eBW" secondAttribute="top" constant="29" id="CiY-4S-s0b"/>
                             <constraint firstItem="pmu-uo-jZU" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="25" id="Doy-JO-auI"/>
                             <constraint firstItem="81b-Tn-fwP" firstAttribute="leading" secondItem="QXZ-Fd-lSS" secondAttribute="leading" id="Dtw-c7-4Jj"/>
                             <constraint firstItem="On1-jd-0p7" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="319" id="F3a-67-Vpu"/>
@@ -111,6 +120,7 @@
                             <constraint firstItem="QXZ-Fd-lSS" firstAttribute="baseline" secondItem="fDx-3h-0DD" secondAttribute="firstBaseline" id="clm-1K-16U"/>
                             <constraint firstItem="pmu-uo-jZU" firstAttribute="baseline" secondItem="81b-Tn-fwP" secondAttribute="baseline" id="ei9-3y-v5T"/>
                             <constraint firstItem="kJF-51-vQu" firstAttribute="bottom" secondItem="QxP-2i-WvM" secondAttribute="bottom" id="gzg-yC-Hj3"/>
+                            <constraint firstItem="1BP-ew-RuW" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="106" id="hdf-i8-cEd"/>
                             <constraint firstItem="IEG-8R-eBW" firstAttribute="trailing" secondItem="QxP-2i-WvM" secondAttribute="trailing" constant="52" id="i54-ZD-CSA"/>
                             <constraint firstItem="fDx-3h-0DD" firstAttribute="top" secondItem="L84-2z-UrA" secondAttribute="bottom" constant="10" id="iGv-nN-EfH"/>
                             <constraint firstItem="vfY-2E-3Ft" firstAttribute="trailing" secondItem="fML-QX-kpt" secondAttribute="trailingMargin" id="jLr-fY-LE0"/>
@@ -120,15 +130,18 @@
                             <constraint firstItem="NMa-ji-snc" firstAttribute="bottom" secondItem="IEG-8R-eBW" secondAttribute="bottom" id="qmL-eG-hvu"/>
                             <constraint firstItem="On1-jd-0p7" firstAttribute="trailing" secondItem="L84-2z-UrA" secondAttribute="trailing" id="r3M-pJ-JL2"/>
                             <constraint firstItem="fDx-3h-0DD" firstAttribute="baseline" secondItem="QXZ-Fd-lSS" secondAttribute="baseline" id="r4V-JV-TkL"/>
+                            <constraint firstItem="On1-jd-0p7" firstAttribute="leading" secondItem="1BP-ew-RuW" secondAttribute="trailing" constant="8" id="tjw-sz-bIt"/>
                             <constraint firstItem="kJF-51-vQu" firstAttribute="leading" secondItem="IEG-8R-eBW" secondAttribute="leading" constant="32" id="uas-AM-2R9"/>
                             <constraint firstItem="pmu-uo-jZU" firstAttribute="top" secondItem="kJF-51-vQu" secondAttribute="bottom" constant="56" id="vJW-Tb-P9o"/>
                             <constraint firstItem="L84-2z-UrA" firstAttribute="leading" secondItem="kJF-51-vQu" secondAttribute="trailing" constant="8" symbolic="YES" id="vfs-vr-Tsf"/>
+                            <constraint firstItem="On1-jd-0p7" firstAttribute="leading" secondItem="1BP-ew-RuW" secondAttribute="trailing" constant="8" symbolic="YES" id="wwQ-5t-dkG"/>
                             <constraint firstItem="L84-2z-UrA" firstAttribute="leading" secondItem="fDx-3h-0DD" secondAttribute="leading" id="zpk-gx-OUV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IEG-8R-eBW"/>
                     </view>
                     <connections>
                         <outlet property="cpfLabel" destination="QxP-2i-WvM" id="cN5-fm-Ozf"/>
+                        <outlet property="emailLabel" destination="1BP-ew-RuW" id="N3N-BG-1lb"/>
                         <outlet property="idadeLabel" destination="fDx-3h-0DD" id="85V-Gp-thG"/>
                         <outlet property="nameLabel" destination="L84-2z-UrA" id="YZI-Ow-TDP"/>
                     </connections>
