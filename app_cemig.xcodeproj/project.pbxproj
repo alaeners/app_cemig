@@ -39,6 +39,7 @@
 		BBDB54252087834700C43C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDB54232087834700C43C5D /* LaunchScreen.storyboard */; };
 		BBDB54302087834700C43C5D /* app_cemigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB542F2087834700C43C5D /* app_cemigTests.swift */; };
 		BBDB543B2087834700C43C5D /* app_cemigUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB543A2087834700C43C5D /* app_cemigUITests.swift */; };
+		BBFF9D4320C84ACD00A98468 /* EquipmentsTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFF9D4220C84ACD00A98468 /* EquipmentsTableViewCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		BBDB543A2087834700C43C5D /* app_cemigUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_cemigUITests.swift; sourceTree = "<group>"; };
 		BBDB543C2087834700C43C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBDB544920878B3000C43C5D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		BBFF9D4220C84ACD00A98468 /* EquipmentsTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentsTableViewCellController.swift; sourceTree = "<group>"; };
 		C49BBEDD89AB2214F8E6B62C /* Pods-app_cemigUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemigUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E38D1412BF55B48718E784E0 /* Pods_app_cemigTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_cemigTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C8F2FF18A3BE278B96E0DE /* Pods-app_cemig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemig.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				BB589CA720C184B4007412C5 /* ConsumerProfileTableViewController.swift */,
 				BB79AA7120C1A60D003DDFE8 /* EditUserViewController.swift */,
 				BB79AA7820C3339D003DDFE8 /* AddProfileViewController.swift */,
+				BBFF9D4220C84ACD00A98468 /* EquipmentsTableViewCellController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */,
 				BBDB541D2087834400C43C5D /* ViewController.swift in Sources */,
 				BB79AA7920C3339D003DDFE8 /* AddProfileViewController.swift in Sources */,
+				BBFF9D4320C84ACD00A98468 /* EquipmentsTableViewCellController.swift in Sources */,
 				BBDB541B2087834400C43C5D /* AppDelegate.swift in Sources */,
 				BB79AA7520C32C84003DDFE8 /* Usuario.swift in Sources */,
 				BB79AA7220C1A60D003DDFE8 /* EditUserViewController.swift in Sources */,
@@ -784,13 +788,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A8CWCR5M6;
+				DEVELOPMENT_TEAM = A4KQ8DYU5B;
 				INFOPLIST_FILE = app_cemig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
+				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig-dad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -805,13 +810,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4A8CWCR5M6;
+				DEVELOPMENT_TEAM = A4KQ8DYU5B;
 				INFOPLIST_FILE = app_cemig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig";
+				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig-dad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

@@ -23,18 +23,6 @@ class ConsumerProfileTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     //MARK: - Labels
-    @IBOutlet var nomeEquipamentoLabel: UILabel!
-    
     //MARK: - TextFields
-    @IBOutlet var quantidadeTextField: UITextField!
-    @IBOutlet var diasTextField: UITextField!
-    @IBOutlet var minutosTextField: UITextField!
-    @IBOutlet var horasTextField: UITextField!
-    @IBOutlet var potenciaTextField: UITextField!
-    @IBOutlet var potenciaSBTextField: UITextField!
-    
-    //MARK: - Buttons
-    @IBAction func ExcluirItemButton(_ sender: UIButton) {
-    }
-    
+    //MARK: - Buttons    
 }
