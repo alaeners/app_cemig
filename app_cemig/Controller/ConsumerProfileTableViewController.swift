@@ -10,19 +10,57 @@ import UIKit
 import Alamofire
 import Foundation
 
-class ConsumerProfileTableViewController: UITableViewController {
+class BetterTableViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewSetup()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension BetterTableViewController {
+    
+    func tableViewSetup() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 350
+        
+        // NOTE: - Registering the cell programmatically
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BetterTableViewCell")
     }
+    
+}
+
+// MARK: - Table View Delegate
+extension BetterTableViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - Table View Data Source
+extension BetterTableViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1000
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BetterTableViewCell")
+        cell?.textLabel?.text = "Wow much better"
+        return cell!
+    }
+    
+}
+
     //MARK: - Labels
     //MARK: - TextFields
     //MARK: - Buttons    
-}
+

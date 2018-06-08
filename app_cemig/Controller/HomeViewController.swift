@@ -85,9 +85,16 @@ class HomeViewController: UIViewController {
     @IBOutlet var cpfLabel: UILabel!
     @IBOutlet var idadeLabel: UILabel!
     
-    
-    @IBAction func profileConsumerButton(_ sender: UIButton) {
+    @IBAction func viewProfileConsumer(_ sender: Any) {
         
+        
+        let viewController:UIViewController = UIStoryboard(name: "ConsumerProfile", bundle: nil).instantiateViewController(withIdentifier: "ConsumerProfileStoryboard") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
+        
+    }
+    
+    @IBAction func profileConsumerAddButton(_ sender: UIButton) {
         let viewController:UIViewController = UIStoryboard(name: "AddProfile", bundle: nil).instantiateViewController(withIdentifier: "AddProfileStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)

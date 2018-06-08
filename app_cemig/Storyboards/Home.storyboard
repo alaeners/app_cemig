@@ -67,7 +67,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add-rule"/>
                                 <connections>
-                                    <action selector="profileConsumerButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="ztC-pE-bC0"/>
+                                    <action selector="profileConsumerAddButton:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="ztC-pE-bC0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-2E-3Ft" userLabel="Delete">
@@ -85,10 +85,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-Al-tyv">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-Al-tyv" userLabel="VisualizarPerfil">
                                 <rect key="frame" x="197" y="262" width="52" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="perfilConsumo"/>
+                                <connections>
+                                    <action selector="viewProfileConsumer:" destination="Xa6-uu-Nz3" eventType="touchUpInside" id="BjA-Tf-Wi2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81b-Tn-fwP" userLabel="Edit">
                                 <rect key="frame" x="78" y="263" width="45" height="42"/>
