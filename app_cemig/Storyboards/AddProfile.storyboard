@@ -113,10 +113,6 @@
                                     <action selector="AddItem:" destination="sQO-55-7ah" eventType="touchUpInside" id="Vyo-jJ-Wik"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf7-5J-49y">
-                                <rect key="frame" x="62" y="36" width="195" height="172"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GS-5W-TUb" userLabel="btnVoltar">
                                 <rect key="frame" x="279" y="36" width="33" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -125,6 +121,10 @@
                                     <action selector="Voltar:" destination="sQO-55-7ah" eventType="touchUpInside" id="2mr-Wx-ufg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lampIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cdF-7Q-jMG">
+                                <rect key="frame" x="65" y="53" width="175" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -153,5 +153,6 @@
         <image name="add-file" width="1600" height="1600"/>
         <image name="back" width="512" height="512"/>
         <image name="bgDefault" width="54" height="102"/>
+        <image name="lampIcon" width="170" height="170"/>
     </resources>
 </document>

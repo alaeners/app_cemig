@@ -23,6 +23,13 @@ extension ConsumerProfileTableViewController {
     }
     
 }
+//sim, eu comentei essa merda e esqueci kkkk pqp ISUAUHSUAHSU menos mal se for só isso, triste pq eu to a 3 dias sofrendo com isso KKKKKKK namoralzinha eu to puta aqui com
+// mas quero que funfa vou cobrar pao de queijo aqui é 3,50
+
+// é as duas coisas... tenho que apresentar esse trabalho na faculdade... porém preciso aprender o swift ... juntei o últil ao agradável TUDO IO :)
+// mnentira a API quem fez foi pedro mas relacionado ao swift fui eu
+//sim, pedro é my boy magia nós somos o casal lésbico mais bonito da faculdade KKKKKKKKK
+// depois te mostro pq kkk
 
 
 // MARK: - Table View Delegate

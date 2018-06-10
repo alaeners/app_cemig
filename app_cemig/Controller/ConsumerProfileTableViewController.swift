@@ -10,12 +10,23 @@ import UIKit
 import Foundation
 import Alamofire
 
+struct SearchItem: Codable{
+    let nomeEquipamento: Int64
+    let dias: String
+    let horas: String
+    let minutos: String
+    let potencia:String
+    let potenciaSB: Int
+    let quatidade: Int
+}
+
 class ConsumerProfileTableViewController: UITableViewController {
     
     // MARK: - Tables Views
     @IBOutlet var tableViewController: UITableView!
-    
 
+    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +55,62 @@ class ConsumerProfileTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 1000
     }
-    
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableViewController.dequeueReusableCell(withIdentifier: "ConsumerProfileTableViewCell") as? ConsumerProfileTableViewCellController
-        cell?.diasLabel.text! = "Dias Label"
+        guard let cell = tableViewController.dequeueReusableCell(withIdentifier: "ConsumerProfileTableViewCellController") as? ConsumerProfileTableViewCellController else {fatalError()}
+       // cell = .equipamentoLabel.text = iten[indexPath.row].nomeEquioamento
         
-        return cell!
+        //Esses aqui sao imutáveis
+         cell.equipamentoLabel.text = "NOME DO EQUIPAMENTO"
+         cell.quantidadeLabel.text = "Qtd.: "
+         cell.diasLabel.text = "Dias: "
+         cell.tempoUsoLabel.text = "Tempo de Uso "
+         cell.potencia.text = "Pot.: "
+         cell.potenciaSBLabel.text = "Pot. SB: "
+         cell.horasLabel.text = "Hrs.: "
+         cell.minutosLabel.text = "Min.: "
+         cell.w1Label.text = "W"
+         cell.w2Label.text = "W"
+        
+        if defaults.string(forKey: "EmailDefaults") != nil {
+            
+            let urlString = URL(string: "https://apicemig.azurewebsites.net/api/usuario/email/"+defaults.string(forKey: "EmailDefaults")!)
+            if let url = urlString {
+                _ = URLSession.shared.dataTask(with: url) {
+                    (data, response, error) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                do {
+                                    let item =  try JSONDecoder().decode(SearchItem.self, from: data)
+                                    
+                                    cell.quandidadeTextField.text = item.quatidade as? String
+                                    cell.diasTextField.text = item.dias
+                                    cell.minutosTextField.text = item.minutos
+                                    cell.horasTextField.text = item.horas
+                                    cell.potenciaTextField.text = item.potencia as? String
+                                    cell.potenciaSBTextField.text = item.potenciaSB as? String
+                                    
+                                    
+                                } catch _ {
+                                    let view = UIAlertController(title: "Falha ao carregar dados", message: "Favor executar logon novamente", preferredStyle: .alert)
+                                    let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                                        //Do some thing here
+                                        view.dismiss(animated: true) {() -> Void in }
+                                    })
+                                    view.addAction(ok)
+                                    self.present(view, animated: true) {() -> Void in }
+                                }
+                            }
+                        }
+                    }
+                    }.resume()
+            }
+        }
+        return cell
     }
 
     /*

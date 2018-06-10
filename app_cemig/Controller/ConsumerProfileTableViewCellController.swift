@@ -36,7 +36,7 @@ class ConsumerProfileTableViewCellController: UITableViewCell {
     //MARK: - Buttons
     @IBAction func deleteItemButton(_ sender: UIButton) {
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
