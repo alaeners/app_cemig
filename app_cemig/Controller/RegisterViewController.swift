@@ -163,8 +163,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         self.confEmailRegisterTextField.text = ""
         self.passwordRegisterTextField.text = ""
         self.confPasswordRegisterTextField.text = ""
-        self.localidadeTextField.text = ""
-        
+        self.localidadeTextField.text = ""        
         
     }
 

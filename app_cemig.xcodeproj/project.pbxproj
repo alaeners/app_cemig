@@ -10,16 +10,18 @@
 		5A625E3B019B51E0FE852984 /* Pods_app_cemig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695C1A15E9DD18B416FEE213 /* Pods_app_cemig.framework */; };
 		926538D5DA88BA5A0ED0E004 /* Pods_app_cemigTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E38D1412BF55B48718E784E0 /* Pods_app_cemigTests.framework */; };
 		BAFFB5C9D261AC7B45D3A04A /* Pods_app_cemigUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007511C9B35521AAE3DEC15B /* Pods_app_cemigUITests.framework */; };
+		BB06482320CD93B900023FC4 /* ConsumerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06482220CD93B900023FC4 /* ConsumerProfileViewController.swift */; };
 		BB0BB2DD208E460200936A8A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DC208E460200936A8A /* Login.storyboard */; };
 		BB0BB2DF208E461700936A8A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DE208E461700936A8A /* Home.storyboard */; };
 		BB0BB2E1208E462700936A8A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2E0208E462700936A8A /* Register.storyboard */; };
-		BB1621EF2097B51500A3211E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1621EE2097B51500A3211E /* Alamofire.framework */; };
+		BB1621EF2097B51500A3211E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1621EE2097B51500A3211E /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BB17C1FF208A3C0200CC92B9 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C1FE208A3C0200CC92B9 /* LauchViewController.swift */; };
 		BB17C201208A3C2C00CC92B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */; };
 		BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */; };
 		BB17C205208A518500CC92B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17C204208A518500CC92B9 /* LoginViewController.swift */; };
 		BB589CA220C05D08007412C5 /* ConsumerProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */; };
-		BB589CA820C184B4007412C5 /* ConsumerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB589CA720C184B4007412C5 /* ConsumerProfileTableViewController.swift */; };
+		BB6E990620CD7D460057CEE6 /* ConsumerProfileTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6E990520CD7D460057CEE6 /* ConsumerProfileTableViewCellController.swift */; };
+		BB6E990820CD7D6C0057CEE6 /* ConsumerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6E990720CD7D6C0057CEE6 /* ConsumerProfileTableViewController.swift */; };
 		BB73CAA8208A370E00387A03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB73CAA7208A370E00387A03 /* Foundation.framework */; };
 		BB79AA7020C1A56B003DDFE8 /* EditUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB79AA6F20C1A56B003DDFE8 /* EditUser.storyboard */; };
 		BB79AA7220C1A60D003DDFE8 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79AA7120C1A60D003DDFE8 /* EditUserViewController.swift */; };
@@ -39,7 +41,6 @@
 		BBDB54252087834700C43C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDB54232087834700C43C5D /* LaunchScreen.storyboard */; };
 		BBDB54302087834700C43C5D /* app_cemigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB542F2087834700C43C5D /* app_cemigTests.swift */; };
 		BBDB543B2087834700C43C5D /* app_cemigUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB543A2087834700C43C5D /* app_cemigUITests.swift */; };
-		BBFF9D4320C84ACD00A98468 /* EquipmentsTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFF9D4220C84ACD00A98468 /* EquipmentsTableViewCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		695C1A15E9DD18B416FEE213 /* Pods_app_cemig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_cemig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B8837324D305E929B682CC /* Pods-app_cemigUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemigUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3ACFDCACDCF61F1616E9061 /* Pods-app_cemigTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemigTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemigTests/Pods-app_cemigTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB06482220CD93B900023FC4 /* ConsumerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileViewController.swift; sourceTree = "<group>"; };
 		BB0BB2DC208E460200936A8A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BB0BB2DE208E461700936A8A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB0BB2E0208E462700936A8A /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -75,7 +77,8 @@
 		BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BB17C204208A518500CC92B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB589CA120C05D08007412C5 /* ConsumerProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConsumerProfile.storyboard; sourceTree = "<group>"; };
-		BB589CA720C184B4007412C5 /* ConsumerProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerProfileTableViewController.swift; sourceTree = "<group>"; };
+		BB6E990520CD7D460057CEE6 /* ConsumerProfileTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerProfileTableViewCellController.swift; sourceTree = "<group>"; };
+		BB6E990720CD7D6C0057CEE6 /* ConsumerProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerProfileTableViewController.swift; sourceTree = "<group>"; };
 		BB73CAA7208A370E00387A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB79AA6F20C1A56B003DDFE8 /* EditUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditUser.storyboard; sourceTree = "<group>"; };
 		BB79AA7120C1A60D003DDFE8 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +105,6 @@
 		BBDB543A2087834700C43C5D /* app_cemigUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_cemigUITests.swift; sourceTree = "<group>"; };
 		BBDB543C2087834700C43C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBDB544920878B3000C43C5D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		BBFF9D4220C84ACD00A98468 /* EquipmentsTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentsTableViewCellController.swift; sourceTree = "<group>"; };
 		C49BBEDD89AB2214F8E6B62C /* Pods-app_cemigUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemigUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E38D1412BF55B48718E784E0 /* Pods_app_cemigTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_cemigTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C8F2FF18A3BE278B96E0DE /* Pods-app_cemig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemig.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,10 +197,11 @@
 				BB17C200208A3C2C00CC92B9 /* HomeViewController.swift */,
 				BB17C202208A3F5700CC92B9 /* RegisterViewController.swift */,
 				BB17C204208A518500CC92B9 /* LoginViewController.swift */,
-				BB589CA720C184B4007412C5 /* ConsumerProfileTableViewController.swift */,
 				BB79AA7120C1A60D003DDFE8 /* EditUserViewController.swift */,
 				BB79AA7820C3339D003DDFE8 /* AddProfileViewController.swift */,
-				BBFF9D4220C84ACD00A98468 /* EquipmentsTableViewCellController.swift */,
+				BB06482220CD93B900023FC4 /* ConsumerProfileViewController.swift */,
+				BB6E990720CD7D6C0057CEE6 /* ConsumerProfileTableViewController.swift */,
+				BB6E990520CD7D460057CEE6 /* ConsumerProfileTableViewCellController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,7 +308,6 @@
 				BBDB54142087834400C43C5D /* Frameworks */,
 				BBDB54152087834400C43C5D /* Resources */,
 				929B43A6FEA5CAB8F7F311E2 /* [CP] Embed Pods Frameworks */,
-				71C139D3BF1C1E0019079FAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,8 +326,6 @@
 				BBDB54272087834700C43C5D /* Sources */,
 				BBDB54282087834700C43C5D /* Frameworks */,
 				BBDB54292087834700C43C5D /* Resources */,
-				58D38F451553337780BED641 /* [CP] Embed Pods Frameworks */,
-				AA9EC5195850DAFD77C5743B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,8 +345,6 @@
 				BBDB54322087834700C43C5D /* Sources */,
 				BBDB54332087834700C43C5D /* Frameworks */,
 				BBDB54342087834700C43C5D /* Resources */,
-				2C92396E56F69D59D8D70CCC /* [CP] Embed Pods Frameworks */,
-				66C2DD58D465E06737AB1018 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,66 +433,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C92396E56F69D59D8D70CCC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		58D38F451553337780BED641 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigTests/Pods-app_cemigTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66C2DD58D465E06737AB1018 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71C139D3BF1C1E0019079FAB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7200B604AD5D0FC053D0702C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,21 +499,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemig/Pods-app_cemig-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA9EC5195850DAFD77C5743B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-app_cemigTests/Pods-app_cemigTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E82BA1DDF4CEA363DE92B496 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -602,12 +525,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB17C205208A518500CC92B9 /* LoginViewController.swift in Sources */,
+				BB06482320CD93B900023FC4 /* ConsumerProfileViewController.swift in Sources */,
 				BB17C1FF208A3C0200CC92B9 /* LauchViewController.swift in Sources */,
-				BB589CA820C184B4007412C5 /* ConsumerProfileTableViewController.swift in Sources */,
 				BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */,
 				BBDB541D2087834400C43C5D /* ViewController.swift in Sources */,
+				BB6E990620CD7D460057CEE6 /* ConsumerProfileTableViewCellController.swift in Sources */,
 				BB79AA7920C3339D003DDFE8 /* AddProfileViewController.swift in Sources */,
-				BBFF9D4320C84ACD00A98468 /* EquipmentsTableViewCellController.swift in Sources */,
+				BB6E990820CD7D6C0057CEE6 /* ConsumerProfileTableViewController.swift in Sources */,
 				BBDB541B2087834400C43C5D /* AppDelegate.swift in Sources */,
 				BB79AA7520C32C84003DDFE8 /* Usuario.swift in Sources */,
 				BB79AA7220C1A60D003DDFE8 /* EditUserViewController.swift in Sources */,

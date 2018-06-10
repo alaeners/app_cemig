@@ -26,6 +26,16 @@ DEPENDENCIES:
   - FacebookLogin
   - JMMaskTextField
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Bolts
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - JMMaskTextField
+
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -37,4 +47,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4ccb8261e2ce2eed5ae5af75717d8ed0368e58a8
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2
