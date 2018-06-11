@@ -47,7 +47,7 @@ class AddProfileViewController: UIViewController {
     }
     
     @IBAction func Voltar(_ sender: UIButton) {
-       let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
+        let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
         
         //self.navigationController?.popViewController(animated: true)
         //self.present(viewController, animated: false, completion: nil)

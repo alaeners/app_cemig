@@ -235,10 +235,10 @@ class EditUserViewController: UIViewController {
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                     //Do some thing here
                     let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
-//
+                    //
                     self.navigationController?.popViewController(animated: true)
-//
-//                    view.dismiss(animated: true) {() -> Void in }
+                    //
+                    //                    view.dismiss(animated: true) {() -> Void in }
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in}

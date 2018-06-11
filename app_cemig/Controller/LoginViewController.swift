@@ -12,7 +12,7 @@ import Alamofire
 
 class LoginViewController: UIViewController {
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,18 +42,18 @@ class LoginViewController: UIViewController {
         defaults.set(self.emailTextField.text!, forKey: "EmailDefaults")
         
         let url = "https://apicemig.azurewebsites.net/api/login"
-
+        
         Alamofire.request(url, method:.post, parameters: parametersLogin, encoding: URLEncoding.default).response { response in
             switch response.response?.statusCode {
             case 200:
                 let homeNavigationController = UINavigationController()
-
+                
                 let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
                 homeNavigationController.viewControllers = [viewController]
                 self.present(homeNavigationController, animated: false, completion: nil)
-
+                
             case 401:
-
+                
                 // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
                 let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }
-
+                
             case .none:
                 // Opa algo ta errado isso aí! Verifica email ou senha e mandamos um alertView na tela
                 let view = UIAlertController(title: "Erro de Acesso", message: "Verifique seu e-mail ou senha e tente novamente", preferredStyle: .alert)

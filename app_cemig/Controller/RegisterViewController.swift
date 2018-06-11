@@ -167,15 +167,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         self.localidadeTextField.text = ""        
         
     }
-
+    
     
     @IBAction func backButton(_ sender: UIButton) {
         
         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainStoryboard") as UIViewController
         
-            self.present(viewController, animated: false, completion: nil)
+        self.present(viewController, animated: false, completion: nil)
     }
-
+    
     
     @IBAction func saveRegisterButton(_ sender: UIButton) {
         
@@ -240,8 +240,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     //self.navigationController?.popViewController(animated: true)
                     //self.present(viewController, animated: false, completion: nil)
                     self.dismiss(animated: true, completion: nil)
-
-  
+                    
+                    
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }

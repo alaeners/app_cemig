@@ -110,7 +110,7 @@ class HomeViewController: UIViewController {
         
         //self.present(viewController, animated: false, completion: nil)
         self.navigationController?.pushViewController(viewController, animated: true)
-  
+        
     }
     
     @IBAction func deleteProfileButton(_ sender: UIButton) {

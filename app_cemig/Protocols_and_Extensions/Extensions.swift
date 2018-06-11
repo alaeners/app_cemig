@@ -22,6 +22,7 @@ extension ConsumerProfileTableViewController {
         // NOTE: - Registering the cell programmatically
         tableView.register(ConsumerProfileTableViewCellController.self, forCellReuseIdentifier: "ConsumerProfileTableViewCell")
         
+        
     }
 }
 //sim, eu comentei essa merda e esqueci kkkk pqp ISUAUHSUAHSU menos mal se for só isso, triste pq eu to a 3 dias sofrendo com isso KKKKKKK namoralzinha eu to puta aqui com

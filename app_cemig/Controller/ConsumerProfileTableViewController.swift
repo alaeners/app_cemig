@@ -71,8 +71,8 @@ class ConsumerProfileTableViewController: UITableViewController {
         self.navigationItem.title = "Perfil de Itens"
         tableViewControllerSetup()
         loadData()
-       
-     }
+        
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,25 +93,27 @@ class ConsumerProfileTableViewController: UITableViewController {
         return 1
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-
-         return root.count
-        }
+        
+        return root.count
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         guard let cell = tableViewController.dequeueReusableCell(withIdentifier: "ConsumerProfileTableViewCellController") as? ConsumerProfileTableViewCellController else {return UITableViewCell()}
-
-            cell.equipamentoLabel.text = root[indexPath.row].descricao
-            cell.diasTextField.text = root[indexPath.row].diasUso
-            cell.minutosTextField.text = root[indexPath.row].minutosUso
-            cell.horasTextField.text = root[indexPath.row].horasUso
-            cell.potenciaTextField.text = root[indexPath.row].potencia
-            cell.potenciaSBTextField.text = root[indexPath.row].potenciaSB
-            cell.quantidadeLabel.isHidden = true
-            cell.quandidadeTextField.isHidden = true
-            return cell       
+        
+        cell.equipamentoLabel.text = root[indexPath.row].descricao
+        cell.diasTextField.text = root[indexPath.row].diasUso
+        cell.minutosTextField.text = root[indexPath.row].minutosUso
+        cell.horasTextField.text = root[indexPath.row].horasUso
+        cell.potenciaTextField.text = root[indexPath.row].potencia
+        cell.potenciaSBTextField.text = root[indexPath.row].potenciaSB
+        cell.quantidadeLabel.isHidden = true
+        cell.quandidadeTextField.isHidden = true
+        return cell       
     }
 }
 
