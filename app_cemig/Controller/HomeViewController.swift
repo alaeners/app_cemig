@@ -86,44 +86,6 @@ class HomeViewController: UIViewController {
     @IBOutlet var idadeLabel: UILabel!
     
     @IBAction func viewProfileConsumer(_ sender: Any) {
-        
-        if defaults.string(forKey: "EmailDefaults") != nil {
-            
-            let urlString = URL(string: "https://apicemig.azurewebsites.net/api/itemperfil/item/"+defaults.string(forKey: "EmailDefaults")!)
-            if let url = urlString {
-                _ = URLSession.shared.dataTask(with: url) {  (data, response, error) in
-                    if error != nil {
-                        print(error!)
-                    } else {
-                        if let data = data {
-                            DispatchQueue.main.async {
-                                do {
-                                    let root = try JSONDecoder().decode([SearchItem].self, from: data)
-                                    print(root)
-                                    
-                                    self.defaults.set(root, forKey: "Vetor")
-                                    //var i = 0
-                                    //for item in root {
-                                    
-                                    //   self.fulaninho[i] = item
-                                    //    i = i+1
-                                    //}
-                                } catch _ {
-                                    let view = UIAlertController(title: "Falha ao carregar dados", message: "Favor executar logon novamente", preferredStyle: .alert)
-                                    let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                                        //Do some thing here
-                                        view.dismiss(animated: true) {() -> Void in }
-                                    })
-                                    view.addAction(ok)
-                                    self.present(view, animated: true) {() -> Void in }
-                                }
-                            }
-                        }
-                    }
-                    }.resume()
-            }
-        }
-        
         let viewController:UIViewController = UIStoryboard(name: "ConsumerProfile", bundle: nil).instantiateViewController(withIdentifier: "ConsumerProfileStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)

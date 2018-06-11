@@ -13,15 +13,15 @@ import Alamofire
 // MARK: - Setup
 extension ConsumerProfileTableViewController {
     
+    
     func tableViewControllerSetup() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 350
         
         // NOTE: - Registering the cell programmatically
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ConsumerProfileTableViewCell")
+        tableView.register(ConsumerProfileTableViewCellController.self, forCellReuseIdentifier: "ConsumerProfileTableViewCell")
         
     }
-    
 }
 //sim, eu comentei essa merda e esqueci kkkk pqp ISUAUHSUAHSU menos mal se for só isso, triste pq eu to a 3 dias sofrendo com isso KKKKKKK namoralzinha eu to puta aqui com
 // mas quero que funfa vou cobrar pao de queijo aqui é 3,50

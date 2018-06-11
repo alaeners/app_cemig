@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConsumerProfileTableViewCellController" rowHeight="162" id="0Kr-LC-Day" customClass="ConsumerProfileTableViewCellController" customModule="app_cemig" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ConsumerProfileTableViewCellController" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConsumerProfileTableViewCellController" rowHeight="162" id="0Kr-LC-Day" customClass="ConsumerProfileTableViewCellController" customModule="app_cemig" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Kr-LC-Day" id="qyZ-Na-Ijq">
@@ -192,7 +192,7 @@
                                 <connections>
                                     <outlet property="diasLabel" destination="xvB-fh-fqH" id="M5Z-7f-2Oq"/>
                                     <outlet property="diasTextField" destination="0yw-YK-dS0" id="Zgr-EI-95w"/>
-                                    <outlet property="equipamentoLabel" destination="UeD-M5-9TC" id="iKz-ik-AhG"/>
+                                    <outlet property="equipamentoLabel" destination="UeD-M5-9TC" id="Qam-yu-F8w"/>
                                     <outlet property="horasLabel" destination="vnI-Yg-1Zn" id="IHn-AH-Vv8"/>
                                     <outlet property="horasTextField" destination="0Yd-Wb-wQX" id="gTY-vA-Fs5"/>
                                     <outlet property="imageViewCemig" destination="7tV-h0-rlA" id="o7i-9u-wIc"/>

@@ -32,12 +32,45 @@ class ConsumerProfileTableViewController: UITableViewController {
     @IBOutlet var tableViewController: UITableView!
     
     let defaults = UserDefaults.standard
-    var fulaninho: [SearchItem] = []
+    var root: [SearchItem] = []
+    
+    func loadData(){
+        if defaults.string(forKey: "EmailDefaults") != nil {
+            
+            let urlString = URL(string: "https://apicemig.azurewebsites.net/api/itemperfil/item/"+defaults.string(forKey: "EmailDefaults")!)
+            if let url = urlString {
+                _ = URLSession.shared.dataTask(with: url) {  (data, response, error) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                do {
+                                    self.root = try JSONDecoder().decode([SearchItem].self, from: data)
+                                    self.tableView.reloadData()
+                                    
+                                } catch _ {
+                                    let view = UIAlertController(title: "Falha ao carregar dados", message: "Favor executar logon novamente", preferredStyle: .alert)
+                                    let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
+                                        //Do some thing here
+                                        view.dismiss(animated: true) {() -> Void in }
+                                    })
+                                    view.addAction(ok)
+                                    self.present(view, animated: true) {() -> Void in }
+                                }
+                            }
+                        }
+                    }
+                    }.resume()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fulaninho = defaults.object(forKey: "Vetor") as! [SearchItem]
-    }
+        tableViewControllerSetup()
+        loadData()
+     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,34 +86,23 @@ class ConsumerProfileTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.fulaninho.count
+        return root.count
         }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableViewController.dequeueReusableCell(withIdentifier: "ConsumerProfileTableViewCellController") as? ConsumerProfileTableViewCellController else {fatalError()}
+
+        guard let cell = tableViewController.dequeueReusableCell(withIdentifier: "ConsumerProfileTableViewCellController") as? ConsumerProfileTableViewCellController else {return UITableViewCell()}
         
         //Esses aqui sao imutáveis
+        cell.equipamentoLabel.text = root[indexPath.row].descricao
+        cell.diasTextField.text = root[indexPath.row].diasUso
+        cell.minutosTextField.text = root[indexPath.row].minutosUso
+        cell.horasTextField.text = root[indexPath.row].horasUso
+        cell.potenciaTextField.text = root[indexPath.row].potencia
+        cell.potenciaSBTextField.text = root[indexPath.row].potenciaSB
         cell.quantidadeLabel.isHidden = true
-        cell.diasLabel.text = "Dias: "
-        cell.tempoUsoLabel.text = "Tempo de Uso "
-        cell.potencia.text = "Pot.: "
-        cell.potenciaSBLabel.text = "Pot. SB: "
-        cell.horasLabel.text = "Hrs.: "
-        cell.minutosLabel.text = "Min.: "
-        cell.w1Label.text = "W"
-        cell.w2Label.text = "W"
         cell.quandidadeTextField.isHidden = true
-        
-        //self.fulaninho = root.count
-        cell.equipamentoLabel.text = self.fulaninho[indexPath.row].descricao
-        cell.diasTextField.text = self.fulaninho[indexPath.row].diasUso
-        cell.minutosTextField.text = self.fulaninho[indexPath.row].minutosUso
-        cell.horasTextField.text = self.fulaninho[indexPath.row].horasUso
-        cell.potenciaTextField.text = self.fulaninho[indexPath.row].potencia
-        cell.potenciaSBTextField.text = self.fulaninho[indexPath.row].potenciaSB
-        
-        
         
         return cell
     }
