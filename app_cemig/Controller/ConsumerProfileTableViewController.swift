@@ -99,7 +99,6 @@ class ConsumerProfileTableViewController: UITableViewController {
          return root.count
         }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableViewController.dequeueReusableCell(withIdentifier: "ConsumerProfileTableViewCellController") as? ConsumerProfileTableViewCellController else {return UITableViewCell()}

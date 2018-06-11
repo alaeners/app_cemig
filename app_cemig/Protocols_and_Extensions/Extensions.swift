@@ -17,6 +17,7 @@ extension ConsumerProfileTableViewController {
     func tableViewControllerSetup() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 350
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // NOTE: - Registering the cell programmatically
         tableView.register(ConsumerProfileTableViewCellController.self, forCellReuseIdentifier: "ConsumerProfileTableViewCell")
