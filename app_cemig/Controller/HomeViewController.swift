@@ -30,7 +30,8 @@ class HomeViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        self.navigationItem.title = "🏠"
         // Do any additional setup after loading the view.
         
         if defaults.string(forKey: "EmailDefaults") != nil {
@@ -74,6 +75,11 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     @IBAction func logoffButton(_ sender: UIButton) {
         let viewController:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewStoryboard") as UIViewController
         
@@ -88,7 +94,7 @@ class HomeViewController: UIViewController {
     @IBAction func viewProfileConsumer(_ sender: Any) {
         let viewController:UIViewController = UIStoryboard(name: "ConsumerProfile", bundle: nil).instantiateViewController(withIdentifier: "ConsumerProfileStoryboard") as UIViewController
         
-        self.present(viewController, animated: false, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
     
@@ -96,12 +102,14 @@ class HomeViewController: UIViewController {
         let viewController:UIViewController = UIStoryboard(name: "AddProfile", bundle: nil).instantiateViewController(withIdentifier: "AddProfileStoryboard") as UIViewController
         
         self.present(viewController, animated: false, completion: nil)
+        //self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func editProfileButton(_ sender: UIButton) {
         let viewController:UIViewController = UIStoryboard(name: "EditUser", bundle: nil).instantiateViewController(withIdentifier: "EditUserViewStoryboard") as UIViewController
         
-        self.present(viewController, animated: false, completion: nil)
+        //self.present(viewController, animated: false, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
   
     }
     

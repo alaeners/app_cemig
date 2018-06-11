@@ -10,7 +10,6 @@
 		5A625E3B019B51E0FE852984 /* Pods_app_cemig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695C1A15E9DD18B416FEE213 /* Pods_app_cemig.framework */; };
 		926538D5DA88BA5A0ED0E004 /* Pods_app_cemigTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E38D1412BF55B48718E784E0 /* Pods_app_cemigTests.framework */; };
 		BAFFB5C9D261AC7B45D3A04A /* Pods_app_cemigUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007511C9B35521AAE3DEC15B /* Pods_app_cemigUITests.framework */; };
-		BB06482320CD93B900023FC4 /* ConsumerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06482220CD93B900023FC4 /* ConsumerProfileViewController.swift */; };
 		BB0BB2DD208E460200936A8A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DC208E460200936A8A /* Login.storyboard */; };
 		BB0BB2DF208E461700936A8A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2DE208E461700936A8A /* Home.storyboard */; };
 		BB0BB2E1208E462700936A8A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0BB2E0208E462700936A8A /* Register.storyboard */; };
@@ -66,7 +65,6 @@
 		695C1A15E9DD18B416FEE213 /* Pods_app_cemig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_cemig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B8837324D305E929B682CC /* Pods-app_cemigUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemigUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemigUITests/Pods-app_cemigUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3ACFDCACDCF61F1616E9061 /* Pods-app_cemigTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_cemigTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app_cemigTests/Pods-app_cemigTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BB06482220CD93B900023FC4 /* ConsumerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileViewController.swift; sourceTree = "<group>"; };
 		BB0BB2DC208E460200936A8A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BB0BB2DE208E461700936A8A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB0BB2E0208E462700936A8A /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				BB17C204208A518500CC92B9 /* LoginViewController.swift */,
 				BB79AA7120C1A60D003DDFE8 /* EditUserViewController.swift */,
 				BB79AA7820C3339D003DDFE8 /* AddProfileViewController.swift */,
-				BB06482220CD93B900023FC4 /* ConsumerProfileViewController.swift */,
 				BB6E990720CD7D6C0057CEE6 /* ConsumerProfileTableViewController.swift */,
 				BB6E990520CD7D460057CEE6 /* ConsumerProfileTableViewCellController.swift */,
 			);
@@ -525,7 +522,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB17C205208A518500CC92B9 /* LoginViewController.swift in Sources */,
-				BB06482320CD93B900023FC4 /* ConsumerProfileViewController.swift in Sources */,
 				BB17C1FF208A3C0200CC92B9 /* LauchViewController.swift in Sources */,
 				BB17C203208A3F5700CC92B9 /* RegisterViewController.swift in Sources */,
 				BBDB541D2087834400C43C5D /* ViewController.swift in Sources */,
@@ -719,7 +715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig-dad";
+				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -741,7 +737,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig-dad";
+				PRODUCT_BUNDLE_IDENTIFIER = "ars.app-cemig2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

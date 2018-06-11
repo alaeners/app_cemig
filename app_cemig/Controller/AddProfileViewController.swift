@@ -22,10 +22,15 @@ class AddProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Adicionando Itens"
         
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,11 +45,13 @@ class AddProfileViewController: UIViewController {
         self.horasTextField.text = ""
         self.MinutosTextField.text = ""
     }
-   
+    
     @IBAction func Voltar(_ sender: UIButton) {
-        let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
+       let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
         
-        self.present(viewController, animated: false, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
+        //self.present(viewController, animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func AddItem(_ sender: UIButton) {
         
@@ -73,8 +80,9 @@ class AddProfileViewController: UIViewController {
                 
                 let view = UIAlertController(title: "Dados Salvos", message: "Item Cadastrado com sucesso", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                    
-                 self.LimparTela()
+                    //Do some thing here
+                    view.dismiss(animated: true) {() -> Void in }
+                    self.LimparTela()
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in }
@@ -82,11 +90,11 @@ class AddProfileViewController: UIViewController {
             case .failure(_):
                 let view = UIAlertController(title: "Ops! Algo deu errado", message: "Registro não pode ser realizado.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
-                    //Do some thing here
+                    //Do some thing herefree
                     view.dismiss(animated: true) {() -> Void in }
                 })
                 view.addAction(ok)
-                self.present(view, animated: true) {() -> Void in }
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }

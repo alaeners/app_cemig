@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Usuário Cadastrado"
         // Do any additional setup after loading the view.
     }
     
@@ -45,10 +46,11 @@ class LoginViewController: UIViewController {
         Alamofire.request(url, method:.post, parameters: parametersLogin, encoding: URLEncoding.default).response { response in
             switch response.response?.statusCode {
             case 200:
+                let homeNavigationController = UINavigationController()
 
                 let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
-
-                self.present(viewController, animated: false, completion: nil)
+                homeNavigationController.viewControllers = [viewController]
+                self.present(homeNavigationController, animated: false, completion: nil)
 
             case 401:
 

@@ -13,6 +13,7 @@ import Alamofire
 class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Cadastro de Novo Usuário"
         nameTextField.delegate = self
         cpfTextField.delegate = self
         dateTextField.delegate = self
@@ -236,8 +237,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     //Do some thing here
                     let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
                     
-                    self.present(viewController, animated: false, completion: nil)
-                    view.dismiss(animated: true) {() -> Void in }
+                    //self.navigationController?.popViewController(animated: true)
+                    //self.present(viewController, animated: false, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
+
   
                 })
                 view.addAction(ok)

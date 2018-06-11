@@ -44,6 +44,7 @@ class EditUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Alteração de Dados"
         
         if defaults.string(forKey: "EmailDefaults") != nil {
             
@@ -94,6 +95,11 @@ class EditUserViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     //MARK: - Scrollviews
@@ -172,8 +178,8 @@ class EditUserViewController: UIViewController {
     @IBAction func cancelRegisterButton(_ sender: UIButton) {
         let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
         
-        self.present(viewController, animated: false, completion: nil)
-        
+        self.navigationController?.popViewController(animated: true)
+        //self.present(viewController, animated: false, completion: nil)
         
     }
     
@@ -229,10 +235,10 @@ class EditUserViewController: UIViewController {
                 let ok = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction?) -> Void in
                     //Do some thing here
                     let viewController:UIViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewStoryboard") as UIViewController
-                    
-                    self.present(viewController, animated: false, completion: nil)
-                    
-                    view.dismiss(animated: true) {() -> Void in }
+//
+                    self.navigationController?.popViewController(animated: true)
+//
+//                    view.dismiss(animated: true) {() -> Void in }
                 })
                 view.addAction(ok)
                 self.present(view, animated: true) {() -> Void in}
